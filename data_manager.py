@@ -11,6 +11,10 @@ logger = logging.getLogger('debug_logger')
 
 import notification_service # Import the notification service
 
+# Global connector and connection pool to be initialized once.
+connector = None
+pool = None
+
 def get_db_connection():
     """
     Initializes a connection pool. Uses a PostgreSQL database if DATABASE_URL is set,
