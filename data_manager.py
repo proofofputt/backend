@@ -2,7 +2,6 @@ import os
 import logging
 import sqlalchemy
 import json
-from google.cloud.sql.connector import Connector, IPTypes
 import bcrypt
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
@@ -11,16 +10,6 @@ from sqlalchemy.exc import IntegrityError, OperationalError
 logger = logging.getLogger('debug_logger')
 
 import notification_service # Import the notification service
-
-# --- Google Cloud SQL Configuration ---
-INSTANCE_CONNECTION_NAME = os.environ.get("INSTANCE_CONNECTION_NAME")
-DB_USER = os.environ.get("DB_USER")
-DB_PASS = os.environ.get("DB_PASS")
-DB_NAME = os.environ.get("DB_NAME")
-
-# Global connector and connection pool to be initialized once.
-connector = None
-pool = None
 
 def get_db_connection():
     """
