@@ -37,6 +37,10 @@ with app.app_context():
 def home():
     return "Proof of Putt API is running."
 
+@app.route('/test')
+def test_route():
+    return "Test route is working!"
+
 @app.errorhandler(ValueError)
 def handle_value_error(e):
     return jsonify({"error": str(e)}), 400
@@ -90,7 +94,7 @@ def _create_daily_ai_chat_if_needed(player_id):
             return
 
         # Check for data to analyze - don't create a chat if there's nothing to talk about.
-        stats = data_manager.get_career_stats(player_id)
+        stats = data_manager.get_player_stats(player_id)
         sessions = data_manager.get_sessions_for_player(player_id)
         if not stats or not sessions:
             app.logger.info(f"Skipping daily AI chat for player {player_id}: no stats or sessions.")
@@ -124,16 +128,7 @@ Keep the entire response concise and encouraging.'''
 
 # --- Auth & Player Routes ---
 
-@app.route('/login', methods=['OPTIONS'])
-def login_options():
-    response = jsonify({'message': 'CORS preflight successful'})
-    response.headers.add('Access-Control-Allow-Origin', os.environ.get("FRONTEND_URL", "http://localhost:5173"))
-    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
-    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
-    response.headers.add('Access-Control-Allow-Credentials', 'true')
-    return response
-
-@app.route('/login', methods=['POST'])
+@app.route('/login', methods=['POST', 'OPTIONS'])
 def login():
     data = request.get_json()
     email = data.get('email', '').strip()
@@ -163,16 +158,7 @@ def login():
         app.logger.error(f"Login failed: {e}", exc_info=True)
         return jsonify({"error": "An internal error occurred during login."}), 500
 
-@app.route('/register', methods=['OPTIONS'])
-def register_options():
-    response = jsonify({'message': 'CORS preflight successful'})
-    response.headers.add('Access-Control-Allow-Origin', os.environ.get("FRONTEND_URL", "http://localhost:5173"))
-    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
-    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
-    response.headers.add('Access-Control-Allow-Credentials', 'true')
-    return response
-
-@app.route('/register', methods=['POST'])
+@app.route('/register', methods=['POST', 'OPTIONS'])
 def register():
     data = request.get_json()
     email = data.get('email', '').strip()
@@ -199,9 +185,89 @@ def register():
         else:
             return jsonify({"error": "Registration successful, but failed to log in automatically."}), 500
     except ValueError as e:
-        return jsonify({"error": str(e)}), 409
+        return jsonify({"error": "A player with this email already exists."}), 409
     except Exception as e:
         app.logger.error(f"Registration failed: {e}", exc_info=True)
         return jsonify({"error": "An internal error occurred during registration."}), 500
 
-# ... (rest of the file is the same)
+# --- Player Profile Routes ---
+@app.route('/player/<int:player_id>/career-stats', methods=['GET'])
+@subscription_required
+def get_career_stats(player_id):
+    try:
+        stats = data_manager.get_player_stats(player_id)
+        if stats: # Check if stats is not None
+            return jsonify(stats), 200
+        return jsonify({"message": "No career stats found for this player."}), 404
+    except Exception as e:
+        app.logger.error(f"Error getting career stats for player {player_id}: {e}", exc_info=True)
+        return jsonify({"error": "An internal error occurred."}), 500
+
+@app.route('/player/<int:player_id>/sessions', methods=['GET'])
+@subscription_required
+def get_player_sessions(player_id):
+    try:
+        sessions = data_manager.get_sessions_for_player(player_id)
+        return jsonify(sessions), 200
+    except Exception as e:
+        app.logger.error(f"Error getting sessions for player {player_id}: {e}", exc_info=True)
+        return jsonify({"error": "An internal error occurred."}), 500
+
+# --- Duels Routes ---
+@app.route('/duels/list/<int:player_id>', methods=['GET'])
+@subscription_required
+def list_duels(player_id):
+    # Placeholder for listing duels
+    return jsonify({"message": f"Listing duels for player {player_id}", "duels": []}), 200
+
+@app.route('/players/search', methods=['GET'])
+def search_players():
+    search_term = request.args.get('search_term', '').strip()
+    if not search_term:
+        return jsonify({"error": "Search term cannot be empty."}), 400
+    # Placeholder for player search
+    return jsonify({"message": f"Searching players for '{search_term}'", "players": []}), 200
+
+# --- Notifications Routes ---
+@app.route('/notifications/<int:player_id>/unread_count', methods=['GET'])
+@subscription_required
+def get_unread_notification_count(player_id):
+    # Placeholder for unread notification count
+    return jsonify({"unread_count": 0}), 200
+
+# --- Session Management Routes ---
+@app.route('/start-session', methods=['POST'])
+@subscription_required
+def start_session():
+    # Placeholder for starting a session
+    return jsonify({"message": "Session started."}), 200
+
+@app.route('/start-calibration', methods=['POST'])
+@subscription_required
+def start_calibration():
+    # Placeholder for starting calibration
+    return jsonify({"message": "Calibration started."}), 200
+
+# --- AI Coach Routes ---
+@app.route('/coach/conversations', methods=['GET'])
+@subscription_required
+def get_coach_conversations():
+    player_id = request.args.get('player_id', type=int)
+    if not player_id:
+        return jsonify({"error": "Player ID is required."}), 400
+    # Placeholder for getting coach conversations
+    return jsonify({"message": f"Getting coach conversations for player {player_id}", "conversations": []}), 200
+
+@app.route('/coach/conversation/<int:conversation_id>', methods=['GET'])
+@subscription_required
+def get_coach_conversation(conversation_id):
+    # Placeholder for getting a specific coach conversation
+    return jsonify({"message": f"Getting coach conversation {conversation_id}", "conversation": {}}), 200
+
+@app.route('/coach/conversation/<int:conversation_id>/message', methods=['POST'])
+@subscription_required
+def send_coach_message(conversation_id):
+    # Placeholder for sending a message to coach
+    return jsonify({"message": f"Message sent to coach for conversation {conversation_id}"}), 200
+
+# ... (rest of the file is the same) ...

@@ -476,7 +476,17 @@ def get_sessions_for_player(player_id, limit=25, offset=0):
             sqlalchemy.text("SELECT session_id, start_time, end_time, status, total_putts, total_makes, total_misses, best_streak, fastest_21_makes, putts_per_minute, makes_per_minute, most_makes_in_60_seconds, session_duration, putt_list, makes_by_category, misses_by_category FROM sessions WHERE player_id = :player_id ORDER BY start_time DESC LIMIT :limit OFFSET :offset"),
             {"player_id": player_id, "limit": limit, "offset": offset}
         ).mappings().fetchall()
-        return [dict(row) for row in result]
+
+        sessions_data = []
+        for row in result:
+            session_dict = dict(row)
+            # Convert datetime objects to ISO 8601 strings, handle None
+            if session_dict['start_time']:
+                session_dict['start_time'] = session_dict['start_time'].isoformat()
+            if session_dict['end_time']:
+                session_dict['end_time'] = session_dict['end_time'].isoformat()
+            sessions_data.append(session_dict)
+        return sessions_data
 
 def get_player_info(player_id):
     pool = get_db_connection()
