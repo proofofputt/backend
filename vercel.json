@@ -7,20 +7,10 @@
     }
   ],
   "env": {
-    "DATABASE_URL": "postgresql://neondb_owner:npg_ndS4yXqr5Gle@ep-empty-resonance-adckmfyx-pooler.c-2.us-east-1.aws.neon.tech/neondb?channel_binding=require&sslmode=require",
+    "DATABASE_URL": "YOUR_DATABASE_URL_HERE",
     "FRONTEND_URL": "https://www.proofofputt.com"
   },
   "routes": [
-    {
-      "src": "/(.*)",
-      "methods": ["OPTIONS"],
-      "headers": {
-        "Access-Control-Allow-Credentials": "true",
-        "Access-Control-Allow-Origin": "https://www.proofofputt.com",
-        "Access-Control-Allow-Methods": "GET,OPTIONS,PATCH,DELETE,POST,PUT",
-        "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
-      }
-    },
     {
       "src": "/(.*)",
       "dest": "api.py"
