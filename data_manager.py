@@ -4,12 +4,12 @@ import sqlalchemy
 import json
 import bcrypt
 from werkzeug.security import generate_password_hash, check_password_hash
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 from sqlalchemy.exc import IntegrityError, OperationalError
 
 logger = logging.getLogger('debug_logger')
 
-import notification_service # Import the notification service
+import notification_service # Import the new notification service
 
 # Global connector and connection pool to be initialized once.
 connector = None
@@ -330,6 +330,7 @@ def initialize_database():
                     created_at {timestamp_type} DEFAULT {default_timestamp},
                     FOREIGN KEY (player_id) REFERENCES players (player_id) ON DELETE CASCADE
                 )
+
             '''))
 
             conn.execute(sqlalchemy.text(f'''
@@ -476,5 +477,29 @@ def get_sessions_for_player(player_id, limit=25, offset=0):
             {"player_id": player_id, "limit": limit, "offset": offset}
         ).mappings().fetchall()
         return [dict(row) for row in result]
+
+def get_player_info(player_id):
+    pool = get_db_connection()
+    with pool.connect() as conn:
+        result = conn.execute(
+            sqlalchemy.text("SELECT player_id, email, name, subscription_status, timezone FROM players WHERE player_id = :player_id"),
+            {"player_id": player_id}
+        ).mappings().first()
+        if result:
+            return dict(result)
+        return None
+
+def get_last_conversation_time(player_id):
+    # Placeholder: In a real application, query your coach_conversations table
+    # to get the last conversation time for the player.
+    # Return a datetime object or None if no conversation exists.
+    return None
+
+def create_conversation(player_id, title, history):
+    # Placeholder: In a real application, insert a new conversation into
+    # your coach_conversations table and return the new conversation_id.
+    # For now, return a dummy ID.
+    logger.info(f"Placeholder: Creating conversation for player {player_id} with title '{title}'")
+    return 999 # Dummy conversation ID
 
 # ... (rest of the file is the same) ...
