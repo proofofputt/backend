@@ -32,7 +32,6 @@ CORS(app, resources={r"/*": {"origins": os.environ.get("FRONTEND_URL", "http://l
 # Initialize database and create default user once when the app starts
 with app.app_context():
     data_manager.initialize_database()
-    data_manager.create_default_user_if_not_exists()
 
 @app.errorhandler(ValueError)
 def handle_value_error(e):

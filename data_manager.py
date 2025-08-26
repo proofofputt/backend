@@ -37,347 +37,391 @@ def get_db_connection():
     return pool
 
 def initialize_database():
-    """Creates the database tables if they don't exist."""
+    """Creates the database tables if they don't exist and ensures the default user is present."""
     pool = get_db_connection()
     db_type = pool.dialect.name
 
     with pool.connect() as conn:
-        player_id_type = "SERIAL PRIMARY KEY" if db_type == "postgresql" else "INTEGER PRIMARY KEY"
-        session_id_type = "SERIAL PRIMARY KEY" if db_type == "postgresql" else "INTEGER PRIMARY KEY"
-        timestamp_type = "TIMESTAMP WITH TIME ZONE" if db_type == "postgresql" else "DATETIME"
-        default_timestamp = "CURRENT_TIMESTAMP" if db_type == "postgresql" else "CURRENT_TIMESTAMP"
+        with conn.begin(): # Use a single transaction for all setup
+            player_id_type = "SERIAL PRIMARY KEY" if db_type == "postgresql" else "INTEGER PRIMARY KEY"
+            session_id_type = "SERIAL PRIMARY KEY" if db_type == "postgresql" else "INTEGER PRIMARY KEY"
+            timestamp_type = "TIMESTAMP WITH TIME ZONE" if db_type == "postgresql" else "DATETIME"
+            default_timestamp = "CURRENT_TIMESTAMP" if db_type == "postgresql" else "CURRENT_TIMESTAMP"
 
-        conn.execute(sqlalchemy.text(f'''
-            CREATE TABLE IF NOT EXISTS players (
-                player_id {player_id_type},
-                email TEXT UNIQUE NOT NULL,
-                name TEXT NOT NULL,
-                password_hash TEXT NOT NULL,
-                created_at {timestamp_type} DEFAULT {default_timestamp},
-                subscription_status TEXT DEFAULT 'free',
-                zaprite_subscription_id TEXT,
-                timezone TEXT DEFAULT 'UTC',
-                x_url TEXT,
-                tiktok_url TEXT,
-                website_url TEXT,
-                notification_preferences TEXT
-            )
-        '''))
+            conn.execute(sqlalchemy.text(f'''
+                CREATE TABLE IF NOT EXISTS players (
+                    player_id {player_id_type},
+                    email TEXT UNIQUE NOT NULL,
+                    name TEXT NOT NULL,
+                    password_hash TEXT NOT NULL,
+                    created_at {timestamp_type} DEFAULT {default_timestamp},
+                    subscription_status TEXT DEFAULT 'free',
+                    zaprite_subscription_id TEXT,
+                    timezone TEXT DEFAULT 'UTC',
+                    x_url TEXT,
+                    tiktok_url TEXT,
+                    website_url TEXT,
+                    notification_preferences TEXT
+                )
+            '''))
 
-        # Add missing columns for SQLite if they don't exist
-        if db_type == "sqlite":
-            columns_to_add = {
-                "x_url": "TEXT",
-                "tiktok_url": "TEXT",
-                "website_url": "TEXT",
-                "notification_preferences": "TEXT"
-            }
-            for column, col_type in columns_to_add.items():
-                try:
-                    conn.execute(sqlalchemy.text(f"ALTER TABLE players ADD COLUMN {column} {col_type}"))
-                    logger.info(f"Added column '{column}' to 'players' table.")
-                except OperationalError as e:
-                    if "duplicate column name" in str(e).lower():
-                        logger.info(f"Column '{column}' already exists in 'players' table. Skipping.")
-                    else:
-                        logger.error(f"Error adding column '{column}' to 'players' table: {e}")
-
-        conn.execute(sqlalchemy.text(f'''
-            CREATE TABLE IF NOT EXISTS sessions (
-                session_id {session_id_type},
-                player_id INTEGER NOT NULL,
-                start_time {timestamp_type} DEFAULT {default_timestamp},
-                end_time {timestamp_type},
-                status TEXT, -- active, completed, aborted
-                total_putts INTEGER,
-                total_makes INTEGER,
-                total_misses INTEGER,
-                best_streak INTEGER,
-                fastest_21_makes REAL,
-                putts_per_minute REAL,
-                makes_per_minute REAL,
-                most_makes_in_60_seconds INTEGER,
-                session_duration REAL,
-                putt_list TEXT, -- JSON
-                makes_by_category TEXT, -- JSON
-                misses_by_category TEXT, -- JSON
-                FOREIGN KEY (player_id) REFERENCES players (player_id) ON DELETE CASCADE
-            )
-        '''))
-
-        conn.execute(sqlalchemy.text(f'''
-            CREATE TABLE IF NOT EXISTS leagues (
-                league_id {session_id_type},
-                creator_id INTEGER NOT NULL,
-                name TEXT NOT NULL,
-                description TEXT,
-                privacy_type TEXT NOT NULL,
-                settings TEXT,
-                start_time {timestamp_type},
-                status TEXT DEFAULT 'registering',
-                final_notifications_sent BOOLEAN DEFAULT FALSE,
-                created_at {timestamp_type} DEFAULT {default_timestamp},
-                FOREIGN KEY (creator_id) REFERENCES players (player_id) ON DELETE CASCADE
-            )
-        '''))
-
-        if db_type == "sqlite":
-            league_columns_to_add = {
-                "final_notifications_sent": "BOOLEAN"
-            }
-            for column, col_type in league_columns_to_add.items():
-                try:
-                    conn.execute(sqlalchemy.text(f"ALTER TABLE leagues ADD COLUMN {column} {col_type} DEFAULT FALSE"))
-                    logger.info(f"Added column '{column}' to 'leagues' table.")
-                except OperationalError as e:
-                    if "duplicate column name" in str(e).lower():
-                        logger.info(f"Column '{column}' already exists in 'leagues' table. Skipping.")
-                    else:
-                        logger.error(f"Error adding column '{column}' to 'leagues' table: {e}")
-
-        conn.execute(sqlalchemy.text(f'''
-            CREATE TABLE IF NOT EXISTS league_members (
-                member_id {session_id_type},
-                league_id INTEGER NOT NULL,
-                player_id INTEGER NOT NULL,
-                status TEXT DEFAULT 'active', -- active, invited
-                UNIQUE (league_id, player_id),
-                FOREIGN KEY (league_id) REFERENCES leagues (league_id) ON DELETE CASCADE,
-                FOREIGN KEY (player_id) REFERENCES players (player_id) ON DELETE CASCADE
-            )
-        '''))
-
-        conn.execute(sqlalchemy.text(f'''
-            CREATE TABLE IF NOT EXISTS league_rounds (
-                round_id {session_id_type},
-                league_id INTEGER NOT NULL,
-                round_number INTEGER NOT NULL,
-                status TEXT DEFAULT 'scheduled', -- scheduled, active, completed
-                start_time {timestamp_type},
-                end_time {timestamp_type},
-                FOREIGN KEY (league_id) REFERENCES leagues (league_id) ON DELETE CASCADE
-            )
-        '''))
-
-        conn.execute(sqlalchemy.text(f'''
-            CREATE TABLE IF NOT EXISTS league_round_submissions (
-                submission_id {session_id_type},
-                round_id INTEGER NOT NULL,
-                player_id INTEGER NOT NULL,
-                session_id INTEGER NOT NULL,
-                score INTEGER NOT NULL,
-                points_awarded INTEGER,
-                submitted_at {timestamp_type} DEFAULT {default_timestamp},
-                UNIQUE (round_id, player_id),
-                FOREIGN KEY (round_id) REFERENCES league_rounds (round_id) ON DELETE CASCADE,
-                FOREIGN KEY (player_id) REFERENCES players (player_id) ON DELETE CASCADE,
-                FOREIGN KEY (session_id) REFERENCES sessions (session_id) ON DELETE CASCADE
-            )
-        '''))
-
-        conn.execute(sqlalchemy.text(f'''
-            CREATE TABLE IF NOT EXISTS player_stats (
-                player_id INTEGER PRIMARY KEY,
-                total_putts INTEGER DEFAULT 0,
-                total_makes INTEGER DEFAULT 0,
-                total_misses INTEGER DEFAULT 0,
-                best_streak INTEGER DEFAULT 0,
-                fastest_21_makes REAL,
-                FOREIGN KEY (player_id) REFERENCES players (player_id) ON DELETE CASCADE
-            )
-        '''))
-
-        conn.execute(sqlalchemy.text(f'''
-            CREATE TABLE IF NOT EXISTS sessions (
-                session_id {session_id_type},
-                player_id INTEGER NOT NULL,
-                start_time {timestamp_type} DEFAULT {default_timestamp},
-                end_time {timestamp_type},
-                status TEXT, -- active, completed, aborted
-                total_putts INTEGER,
-                total_makes INTEGER,
-                total_misses INTEGER,
-                best_streak INTEGER,
-                fastest_21_makes REAL,
-                putts_per_minute REAL,
-                makes_per_minute REAL,
-                most_makes_in_60_seconds INTEGER,
-                session_duration REAL,
-                putt_list TEXT, -- JSON
-                makes_by_category TEXT, -- JSON
-                misses_by_category TEXT, -- JSON
-                FOREIGN KEY (player_id) REFERENCES players (player_id) ON DELETE CASCADE
-            )
-        '''))
-
-        # ... other tables ...
-        conn.execute(sqlalchemy.text(f'''
-            CREATE TABLE IF NOT EXISTS coach_conversations (
-                conversation_id {session_id_type},
-                player_id INTEGER NOT NULL,
-                title TEXT NOT NULL,
-                history_json TEXT NOT NULL,
-                created_at {timestamp_type} DEFAULT {default_timestamp},
-                last_updated {timestamp_type} DEFAULT {default_timestamp},
-                FOREIGN KEY (player_id) REFERENCES players (player_id) ON DELETE CASCADE
-            )
-        '''))
-
-        conn.execute(sqlalchemy.text(f'''
-            CREATE TABLE IF NOT EXISTS duels (
-                duel_id {session_id_type},
-                creator_id INTEGER NOT NULL,
-                invited_player_id INTEGER NOT NULL,
-                status TEXT NOT NULL DEFAULT 'pending',
-                invitation_expiry_minutes INTEGER,
-                session_duration_limit_minutes INTEGER,
-                completion_deadline_minutes INTEGER,
-                creator_submitted_session_id INTEGER,
-                invited_player_submitted_session_id INTEGER,
-                winner_id INTEGER,
-                created_at {timestamp_type} DEFAULT {default_timestamp},
-                start_time {timestamp_type},
-                end_time {timestamp_type},
-                invitation_expires_at {timestamp_type},
-                completion_deadline_at {timestamp_type},
-                FOREIGN KEY (creator_id) REFERENCES players (player_id) ON DELETE CASCADE,
-                FOREIGN KEY (invited_player_id) REFERENCES players (player_id) ON DELETE CASCADE,
-                FOREIGN KEY (creator_submitted_session_id) REFERENCES sessions (session_id),
-                FOREIGN KEY (invited_player_submitted_session_id) REFERENCES sessions (session_id),
-                FOREIGN KEY (winner_id) REFERENCES players (player_id)
-            )
-        '''))
-
-        # Add missing columns for SQLite if they don't exist. This handles schema
-        # updates for existing databases without requiring a full reset.
-        # This also handles dropping obsolete columns from previous schema versions.
-        if db_type == "sqlite":
-            try:
-                duel_table_info = conn.execute(sqlalchemy.text("PRAGMA table_info(duels)")).mappings().fetchall()
-                duel_column_names = [col['name'] for col in duel_table_info]
-
-                # Migration: Add new columns if they don't exist
-                duel_columns_to_add = {
-                    "invitation_expiry_minutes": "INTEGER",
-                    "session_duration_limit_minutes": "INTEGER",
-                    "invitation_expires_at": "DATETIME"
+            # Add missing columns for SQLite if they don't exist
+            if db_type == "sqlite":
+                columns_to_add = {
+                    "x_url": "TEXT",
+                    "tiktok_url": "TEXT",
+                    "website_url": "TEXT",
+                    "notification_preferences": "TEXT"
                 }
-                for column, col_type in duel_columns_to_add.items():
-                    if column not in duel_column_names:
-                        conn.execute(sqlalchemy.text(f"ALTER TABLE duels ADD COLUMN {column} {col_type}"))
-                        logger.info(f"Migration: Added column '{column}' to 'duels' table.")
+                for column, col_type in columns_to_add.items():
+                    try:
+                        conn.execute(sqlalchemy.text(f"ALTER TABLE players ADD COLUMN {column} {col_type}"))
+                        logger.info(f"Added column '{column}' to 'players' table.")
+                    except OperationalError as e:
+                        if "duplicate column name" in str(e).lower():
+                            logger.info(f"Column '{column}' already exists in 'players' table. Skipping.")
+                        else:
+                            logger.error(f"Error adding column '{column}' to 'players' table: {e}")
 
-                # Migration: Drop obsolete 'time_limit_minutes' column
-                if 'time_limit_minutes' in duel_column_names:
-                    logger.info("Migration: Found obsolete 'time_limit_minutes' column in 'duels' table. Dropping it.")
-                    conn.execute(sqlalchemy.text("ALTER TABLE duels DROP COLUMN time_limit_minutes"))
-                    logger.info("Migration: Successfully dropped 'time_limit_minutes' column.")
-            except Exception as e:
-                logger.warning(f"A non-critical error occurred during 'duels' table migration. This is often safe to ignore. Error: {e}")
+            conn.execute(sqlalchemy.text(f'''
+                CREATE TABLE IF NOT EXISTS sessions (
+                    session_id {session_id_type},
+                    player_id INTEGER NOT NULL,
+                    start_time {timestamp_type} DEFAULT {default_timestamp},
+                    end_time {timestamp_type},
+                    status TEXT, -- active, completed, aborted
+                    total_putts INTEGER,
+                    total_makes INTEGER,
+                    total_misses INTEGER,
+                    best_streak INTEGER,
+                    fastest_21_makes REAL,
+                    putts_per_minute REAL,
+                    makes_per_minute REAL,
+                    most_makes_in_60_seconds INTEGER,
+                    session_duration REAL,
+                    putt_list TEXT, -- JSON
+                    makes_by_category TEXT, -- JSON
+                    misses_by_category TEXT, -- JSON
+                    FOREIGN KEY (player_id) REFERENCES players (player_id) ON DELETE CASCADE
+                )
+            '''))
 
-        
+            conn.execute(sqlalchemy.text(f'''
+                CREATE TABLE IF NOT EXISTS leagues (
+                    league_id {session_id_type},
+                    creator_id INTEGER NOT NULL,
+                    name TEXT NOT NULL,
+                    description TEXT,
+                    privacy_type TEXT NOT NULL,
+                    settings TEXT,
+                    start_time {timestamp_type},
+                    status TEXT DEFAULT 'registering',
+                    final_notifications_sent BOOLEAN DEFAULT FALSE,
+                    created_at {timestamp_type} DEFAULT {default_timestamp},
+                    FOREIGN KEY (creator_id) REFERENCES players (player_id) ON DELETE CASCADE
+                )
+            '''))
 
-        # conn.execute(sqlalchemy.text(f'''
-        #     CREATE TABLE IF NOT EXISTS duel_sessions (
-        #         duel_session_id {session_id_type},
-        #         duel_id INTEGER NOT NULL,
-        #         session_id INTEGER NOT NULL,
-        #         player_id INTEGER NOT NULL,
-        #         score INTEGER NOT NULL,
-        #         duration REAL,
-        #         submitted_at {timestamp_type} DEFAULT {default_timestamp},
-        #         FOREIGN KEY (duel_id) REFERENCES duels (duel_id) ON DELETE CASCADE,
-        #         FOREIGN KEY (session_id) REFERENCES sessions (session_id) ON DELETE CASCADE,
-        #         FOREIGN KEY (player_id) REFERENCES players (player_id) ON DELETE CASCADE
-        #     )
-        # '''))
+            if db_type == "sqlite":
+                league_columns_to_add = {
+                    "final_notifications_sent": "BOOLEAN"
+                }
+                for column, col_type in league_columns_to_add.items():
+                    try:
+                        conn.execute(sqlalchemy.text(f"ALTER TABLE leagues ADD COLUMN {column} {col_type} DEFAULT FALSE"))
+                        logger.info(f"Added column '{column}' to 'leagues' table.")
+                    except OperationalError as e:
+                        if "duplicate column name" in str(e).lower():
+                            logger.info(f"Column '{column}' already exists in 'leagues' table. Skipping.")
+                        else:
+                            logger.error(f"Error adding column '{column}' to 'leagues' table: {e}")
 
-        conn.execute(sqlalchemy.text(f'''
-            CREATE TABLE IF NOT EXISTS notifications (
-                id {session_id_type},
-                player_id INTEGER NOT NULL,
-                type TEXT NOT NULL,
-                message TEXT NOT NULL,
-                details TEXT,
-                read_status BOOLEAN DEFAULT FALSE,
-                created_at {timestamp_type} DEFAULT {default_timestamp},
-                link_path TEXT,
-                email_sent BOOLEAN DEFAULT FALSE,
-                FOREIGN KEY (player_id) REFERENCES players (player_id) ON DELETE CASCADE
-            )
-        '''))
+            conn.execute(sqlalchemy.text(f'''
+                CREATE TABLE IF NOT EXISTS league_members (
+                    member_id {session_id_type},
+                    league_id INTEGER NOT NULL,
+                    player_id INTEGER NOT NULL,
+                    status TEXT DEFAULT 'active', -- active, invited
+                    UNIQUE (league_id, player_id),
+                    FOREIGN KEY (league_id) REFERENCES leagues (league_id) ON DELETE CASCADE,
+                    FOREIGN KEY (player_id) REFERENCES players (player_id) ON DELETE CASCADE
+                )
+            '''))
 
-        if db_type == "sqlite":
-            notification_columns_to_add = {
-                "email_sent": "BOOLEAN"
-            }
-            for column, col_type in notification_columns_to_add.items():
+            conn.execute(sqlalchemy.text(f'''
+                CREATE TABLE IF NOT EXISTS league_rounds (
+                    round_id {session_id_type},
+                    league_id INTEGER NOT NULL,
+                    round_number INTEGER NOT NULL,
+                    status TEXT DEFAULT 'scheduled', -- scheduled, active, completed
+                    start_time {timestamp_type},
+                    end_time {timestamp_type},
+                    FOREIGN KEY (league_id) REFERENCES leagues (league_id) ON DELETE CASCADE
+                )
+            '''))
+
+            conn.execute(sqlalchemy.text(f'''
+                CREATE TABLE IF NOT EXISTS league_round_submissions (
+                    submission_id {session_id_type},
+                    round_id INTEGER NOT NULL,
+                    player_id INTEGER NOT NULL,
+                    session_id INTEGER NOT NULL,
+                    score INTEGER NOT NULL,
+                    points_awarded INTEGER,
+                    submitted_at {timestamp_type} DEFAULT {default_timestamp},
+                    UNIQUE (round_id, player_id),
+                    FOREIGN KEY (round_id) REFERENCES league_rounds (round_id) ON DELETE CASCADE,
+                    FOREIGN KEY (player_id) REFERENCES players (player_id) ON DELETE CASCADE,
+                    FOREIGN KEY (session_id) REFERENCES sessions (session_id) ON DELETE CASCADE
+                )
+            '''))
+
+            conn.execute(sqlalchemy.text(f'''
+                CREATE TABLE IF NOT EXISTS player_stats (
+                    player_id INTEGER PRIMARY KEY,
+                    total_putts INTEGER DEFAULT 0,
+                    total_makes INTEGER DEFAULT 0,
+                    total_misses INTEGER DEFAULT 0,
+                    best_streak INTEGER DEFAULT 0,
+                    fastest_21_makes REAL,
+                    FOREIGN KEY (player_id) REFERENCES players (player_id) ON DELETE CASCADE
+                )
+            '''))
+
+            conn.execute(sqlalchemy.text(f'''
+                CREATE TABLE IF NOT EXISTS sessions (
+                    session_id {session_id_type},
+                    player_id INTEGER NOT NULL,
+                    start_time {timestamp_type} DEFAULT {default_timestamp},
+                    end_time {timestamp_type},
+                    status TEXT, -- active, completed, aborted
+                    total_putts INTEGER,
+                    total_makes INTEGER,
+                    total_misses INTEGER,
+                    best_streak INTEGER,
+                    fastest_21_makes REAL,
+                    putts_per_minute REAL,
+                    makes_per_minute REAL,
+                    most_makes_in_60_seconds INTEGER,
+                    session_duration REAL,
+                    putt_list TEXT, -- JSON
+                    makes_by_category TEXT, -- JSON
+                    misses_by_category TEXT, -- JSON
+                    FOREIGN KEY (player_id) REFERENCES players (player_id) ON DELETE CASCADE
+                )
+            '''))
+
+            # ... other tables ...
+            conn.execute(sqlalchemy.text(f'''
+                CREATE TABLE IF NOT EXISTS coach_conversations (
+                    conversation_id {session_id_type},
+                    player_id INTEGER NOT NULL,
+                    title TEXT NOT NULL,
+                    history_json TEXT NOT NULL,
+                    created_at {timestamp_type} DEFAULT {default_timestamp},
+                    last_updated {timestamp_type} DEFAULT {default_timestamp},
+                    FOREIGN KEY (player_id) REFERENCES players (player_id) ON DELETE CASCADE
+                )
+            '''))
+
+            conn.execute(sqlalchemy.text(f'''
+                CREATE TABLE IF NOT EXISTS duels (
+                    duel_id {session_id_type},
+                    creator_id INTEGER NOT NULL,
+                    invited_player_id INTEGER NOT NULL,
+                    status TEXT NOT NULL DEFAULT 'pending',
+                    invitation_expiry_minutes INTEGER,
+                    session_duration_limit_minutes INTEGER,
+                    completion_deadline_minutes INTEGER,
+                    creator_submitted_session_id INTEGER,
+                    invited_player_submitted_session_id INTEGER,
+                    winner_id INTEGER,
+                    created_at {timestamp_type} DEFAULT {default_timestamp},
+                    start_time {timestamp_type},
+                    end_time {timestamp_type},
+                    invitation_expires_at {timestamp_type},
+                    completion_deadline_at {timestamp_type},
+                    FOREIGN KEY (creator_id) REFERENCES players (player_id) ON DELETE CASCADE,
+                    FOREIGN KEY (invited_player_id) REFERENCES players (player_id) ON DELETE CASCADE,
+                    FOREIGN KEY (creator_submitted_session_id) REFERENCES sessions (session_id),
+                    FOREIGN KEY (invited_player_submitted_session_id) REFERENCES sessions (session_id),
+                    FOREIGN KEY (winner_id) REFERENCES players (player_id)
+                )
+            '''))
+
+            # Add missing columns for SQLite if they don't exist. This handles schema
+            # updates for existing databases without requiring a full reset.
+            # This also handles dropping obsolete columns from previous schema versions.
+            if db_type == "sqlite":
                 try:
-                    conn.execute(sqlalchemy.text(f"ALTER TABLE notifications ADD COLUMN {column} {col_type}"))
-                    logger.info(f"Added column '{column}' to 'notifications' table.")
-                except OperationalError as e:
-                    if "duplicate column name" in str(e).lower():
-                        logger.info(f"Column '{column}' already exists in 'notifications' table. Skipping.")
-                    else:
-                        logger.error(f"Error adding column '{column}' to 'notifications' table: {e}")
+                    duel_table_info = conn.execute(sqlalchemy.text("PRAGMA table_info(duels)")).mappings().fetchall()
+                    duel_column_names = [col['name'] for col in duel_table_info]
 
-        conn.execute(sqlalchemy.text(f'''
-            CREATE TABLE IF NOT EXISTS fundraisers (
-                fundraiser_id {session_id_type},
-                player_id INTEGER NOT NULL,
-                name TEXT NOT NULL,
-                cause TEXT,
-                description TEXT,
-                goal_amount REAL NOT NULL,
-                start_time {timestamp_type} NOT NULL,
-                end_time {timestamp_type} NOT NULL,
-                status TEXT DEFAULT 'upcoming',
-                last_notified_milestone INTEGER DEFAULT 0,
-                conclusion_notification_sent BOOLEAN DEFAULT FALSE,
-                created_at {timestamp_type} DEFAULT {default_timestamp},
-                FOREIGN KEY (player_id) REFERENCES players (player_id) ON DELETE CASCADE
-            )
-        '''))
+                    # Migration: Add new columns if they don't exist
+                    duel_columns_to_add = {
+                        "invitation_expiry_minutes": "INTEGER",
+                        "session_duration_limit_minutes": "INTEGER",
+                        "invitation_expires_at": "DATETIME"
+                    }
+                    for column, col_type in duel_columns_to_add.items():
+                        if column not in duel_column_names:
+                            conn.execute(sqlalchemy.text(f"ALTER TABLE duels ADD COLUMN {column} {col_type}"))
+                            logger.info(f"Migration: Added column '{column}' to 'duels' table.")
 
-        conn.execute(sqlalchemy.text(f'''
-            CREATE TABLE IF NOT EXISTS pledges (
-                pledge_id {session_id_type},
-                fundraiser_id INTEGER NOT NULL,
-                pledger_player_id INTEGER NOT NULL,
-                amount_per_putt REAL NOT NULL,
-                max_donation REAL,
-                status TEXT DEFAULT 'active',
-                created_at {timestamp_type} DEFAULT {default_timestamp},
-                FOREIGN KEY (fundraiser_id) REFERENCES fundraisers (fundraiser_id) ON DELETE CASCADE,
-                FOREIGN KEY (pledger_player_id) REFERENCES players (player_id) ON DELETE CASCADE
-            )
-        '''))
+                    # Migration: Drop obsolete 'time_limit_minutes' column
+                    if 'time_limit_minutes' in duel_column_names:
+                        logger.info("Migration: Found obsolete 'time_limit_minutes' column in 'duels' table. Dropping it.")
+                        conn.execute(sqlalchemy.text("ALTER TABLE duels DROP COLUMN time_limit_minutes"))
+                        logger.info("Migration: Successfully dropped 'time_limit_minutes' column.")
+                except Exception as e:
+                    logger.warning(f"A non-critical error occurred during 'duels' table migration. This is often safe to ignore. Error: {e}")
 
-        if db_type == "sqlite":
-            fundraiser_columns_to_add = {
-                "last_notified_milestone": "INTEGER",
-                "conclusion_notification_sent": "BOOLEAN"
-            }
-            for column, col_type in fundraiser_columns_to_add.items():
-                try:
-                    conn.execute(sqlalchemy.text(f"ALTER TABLE fundraisers ADD COLUMN {column} {col_type} DEFAULT 0"))
-                    logger.info(f"Added column '{column}' to 'fundraisers' table.")
-                except OperationalError as e:
-                    if "duplicate column name" in str(e).lower():
-                        logger.info(f"Column '{column}' already exists in 'fundraisers' table. Skipping.")
-                    else:
-                        logger.error(f"Error adding column '{column}' to 'fundraisers' table: {e}")
+            
 
-        conn.execute(sqlalchemy.text(f'''
-            CREATE TABLE IF NOT EXISTS player_relationships (
-                follower_id INTEGER NOT NULL,
-                followed_id INTEGER NOT NULL,
-                created_at {timestamp_type} DEFAULT {default_timestamp},
-                PRIMARY KEY (follower_id, followed_id),
-                FOREIGN KEY (follower_id) REFERENCES players (player_id) ON DELETE CASCADE,
-                FOREIGN KEY (followed_id) REFERENCES players (player_id) ON DELETE CASCADE
-            )
-        '''))
+            # conn.execute(sqlalchemy.text(f'''
+            #     CREATE TABLE IF NOT EXISTS duel_sessions (
+            #         duel_session_id {session_id_type},
+            #         duel_id INTEGER NOT NULL,
+            #         session_id INTEGER NOT NULL,
+            #         player_id INTEGER NOT NULL,
+            #         score INTEGER NOT NULL,
+            #         duration REAL,
+            #         submitted_at {timestamp_type} DEFAULT {default_timestamp},
+            #         FOREIGN KEY (duel_id) REFERENCES duels (duel_id) ON DELETE CASCADE,
+            #         FOREIGN KEY (session_id) REFERENCES sessions (session_id) ON DELETE CASCADE,
+            #         FOREIGN KEY (player_id) REFERENCES players (player_id) ON DELETE CASCADE
+            #     )
+            # '''))
+
+            conn.execute(sqlalchemy.text(f'''
+                CREATE TABLE IF NOT EXISTS notifications (
+                    id {session_id_type},
+                    player_id INTEGER NOT NULL,
+                    type TEXT NOT NULL,
+                    message TEXT NOT NULL,
+                    details TEXT,
+                    read_status BOOLEAN DEFAULT FALSE,
+                    created_at {timestamp_type} DEFAULT {default_timestamp},
+                    link_path TEXT,
+                    email_sent BOOLEAN DEFAULT FALSE,
+                    FOREIGN KEY (player_id) REFERENCES players (player_id) ON DELETE CASCADE
+                )
+            '''))
+
+            if db_type == "sqlite":
+                notification_columns_to_add = {
+                    "email_sent": "BOOLEAN"
+                }
+                for column, col_type in notification_columns_to_add.items():
+                    try:
+                        conn.execute(sqlalchemy.text(f"ALTER TABLE notifications ADD COLUMN {column} {col_type}"))
+                        logger.info(f"Added column '{column}' to 'notifications' table.")
+                    except OperationalError as e:
+                        if "duplicate column name" in str(e).lower():
+                            logger.info(f"Column '{column}' already exists in 'notifications' table. Skipping.")
+                        else:
+                            logger.error(f"Error adding column '{column}' to 'notifications' table: {e}")
+
+            conn.execute(sqlalchemy.text(f'''
+                CREATE TABLE IF NOT EXISTS fundraisers (
+                    fundraiser_id {session_id_type},
+                    player_id INTEGER NOT NULL,
+                    name TEXT NOT NULL,
+                    cause TEXT,
+                    description TEXT,
+                    goal_amount REAL NOT NULL,
+                    start_time {timestamp_type} NOT NULL,
+                    end_time {timestamp_type} NOT NULL,
+                    status TEXT DEFAULT 'upcoming',
+                    last_notified_milestone INTEGER DEFAULT 0,
+                    conclusion_notification_sent BOOLEAN DEFAULT FALSE,
+                    created_at {timestamp_type} DEFAULT {default_timestamp},
+                    FOREIGN KEY (player_id) REFERENCES players (player_id) ON DELETE CASCADE
+                )
+            '''))
+
+            conn.execute(sqlalchemy.text(f'''
+                CREATE TABLE IF NOT EXISTS pledges (
+                    pledge_id {session_id_type},
+                    fundraiser_id INTEGER NOT NULL,
+                    pledger_player_id INTEGER NOT NULL,
+                    amount_per_putt REAL NOT NULL,
+                    max_donation REAL,
+                    status TEXT DEFAULT 'active',
+                    created_at {timestamp_type} DEFAULT {default_timestamp},
+                    FOREIGN KEY (fundraiser_id) REFERENCES fundraisers (fundraiser_id) ON DELETE CASCADE,
+                    FOREIGN KEY (pledger_player_id) REFERENCES players (player_id) ON DELETE CASCADE
+                )
+            '''))
+
+            if db_type == "sqlite":
+                fundraiser_columns_to_add = {
+                    "last_notified_milestone": "INTEGER",
+                    "conclusion_notification_sent": "BOOLEAN"
+                }
+                for column, col_type in fundraiser_columns_to_add.items():
+                    try:
+                        conn.execute(sqlalchemy.text(f"ALTER TABLE fundraisers ADD COLUMN {column} {col_type} DEFAULT 0"))
+                        logger.info(f"Added column '{column}' to 'fundraisers' table.")
+                    except OperationalError as e:
+                        if "duplicate column name" in str(e).lower():
+                            logger.info(f"Column '{column}' already exists in 'fundraisers' table. Skipping.")
+                        else:
+                            logger.error(f"Error adding column '{column}' to 'fundraisers' table: {e}")
+
+            conn.execute(sqlalchemy.text(f'''
+                CREATE TABLE IF NOT EXISTS player_relationships (
+                    follower_id INTEGER NOT NULL,
+                    followed_id INTEGER NOT NULL,
+                    created_at {timestamp_type} DEFAULT {default_timestamp},
+                    PRIMARY KEY (follower_id, followed_id),
+                    FOREIGN KEY (follower_id) REFERENCES players (player_id) ON DELETE CASCADE,
+                    FOREIGN KEY (followed_id) REFERENCES players (player_id) ON DELETE CASCADE
+                )
+            '''))
+
+            # --- Create Default User Logic ---
+            # Check if the user exists
+            pop_user = conn.execute(
+                sqlalchemy.text("SELECT player_id, subscription_status FROM players WHERE email = :email"),
+                {"email": "pop@proofofputt.com"}
+            ).mappings().first()
+
+            if not pop_user:
+                logger.info("Default user 'pop@proofofputt.com' not found. Creating...")
+                # Since we are in a transaction, we can't call register_player directly
+                # as it creates its own transaction. We'll replicate the core logic here.
+                password_hash = bcrypt.hashpw("passwordpop123".encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
+                insert_sql = "INSERT INTO players (email, name, password_hash, timezone) VALUES (:email, :name, :password_hash, :timezone)"
+                if db_type == "postgresql":
+                    insert_sql += " RETURNING player_id"
+                
+                result = conn.execute(sqlalchemy.text(insert_sql), {"email": "pop@proofofputt.com", "name": "POP", "password_hash": password_hash, "timezone": "UTC"})
+                
+                if db_type == "postgresql":
+                    player_id = result.scalar()
+                else: # SQLite
+                    player_id = result.lastrowid
+                
+                conn.execute(sqlalchemy.text("INSERT INTO player_stats (player_id) VALUES (:player_id)"), {"player_id": player_id})
+                pop_user = {'player_id': player_id, 'subscription_status': 'free'}
+                logger.info(f"Registered new default player 'POP' with ID {player_id}.")
+
+            else: # User exists, ensure password hash is updated to bcrypt
+                logger.info(f"Default user {pop_user['player_id']} found. Ensuring password hash is bcrypt compatible.")
+                hashed_password = bcrypt.hashpw("passwordpop123".encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
+                conn.execute(sqlalchemy.text("""
+                    UPDATE players SET password_hash = :password_hash
+                    WHERE player_id = :player_id
+                """"), {"password_hash": hashed_password, "player_id": pop_user['player_id']})
+            
+            # Now, ensure the subscription is active
+            if pop_user and pop_user['subscription_status'] != 'active':
+                logger.info(f"Upgrading default user {pop_user['player_id']} to 'active' subscription status.")
+                conn.execute(sqlalchemy.text("""
+                    UPDATE players SET subscription_status = 'active'
+                    WHERE player_id = :player_id
+                """"), {"player_id": pop_user['player_id']})
 
 
 def create_default_user_if_not_exists():
