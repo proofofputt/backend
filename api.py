@@ -130,6 +130,9 @@ Keep the entire response concise and encouraging.'''
 
 @app.route('/login', methods=['POST', 'OPTIONS'])
 def login():
+    if request.method == 'OPTIONS':
+        return '', 200 # Handle CORS preflight
+
     data = request.get_json()
     email = data.get('email', '').strip()
     password = data['password']
@@ -160,6 +163,9 @@ def login():
 
 @app.route('/register', methods=['POST', 'OPTIONS'])
 def register():
+    if request.method == 'OPTIONS':
+        return '', 200 # Handle CORS preflight
+
     data = request.get_json()
     email = data.get('email', '').strip()
     password = data['password']
