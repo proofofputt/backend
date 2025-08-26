@@ -11,16 +11,149 @@
     "FRONTEND_URL": "https://www.proofofputt.com"
   },
   "routes": [
-    { "src": "/login", "methods": ["GET", "POST", "OPTIONS"], "dest": "api.py" },
-    { "src": "/register", "methods": ["GET", "POST", "OPTIONS"], "dest": "api.py" },
-    { "src": "/leagues", "methods": ["GET", "POST", "OPTIONS"], "dest": "api.py" },
-    { "src": "/leagues/(.*)", "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"], "dest": "api.py" },
-    { "src": "/duels/(.*)", "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"], "dest": "api.py" },
-    { "src": "/player/(.*)", "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"], "dest": "api.py" },
-    { "src": "/players/(.*)", "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"], "dest": "api.py" },
-    { "src": "/notifications/(.*)", "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"], "dest": "api.py" },
-    { "src": "/start-session", "methods": ["GET", "POST", "OPTIONS"], "dest": "api.py" },
-    { "src": "/start-calibration", "methods": ["GET", "POST", "OPTIONS"], "dest": "api.py" },
+    {
+      "src": "/login",
+      "methods": ["OPTIONS"],
+      "headers": {
+        "Access-Control-Allow-Origin": "https://www.proofofputt.com",
+        "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Max-Age": "86400"
+      },
+      "continue": true
+    },
+    { "src": "/login", "methods": ["POST"], "dest": "api.py" },
+    {
+      "src": "/register",
+      "methods": ["OPTIONS"],
+      "headers": {
+        "Access-Control-Allow-Origin": "https://www.proofofputt.com",
+        "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Max-Age": "86400"
+      },
+      "continue": true
+    },
+    { "src": "/register", "methods": ["POST"], "dest": "api.py" },
+    {
+      "src": "/leagues",
+      "methods": ["OPTIONS"],
+      "headers": {
+        "Access-Control-Allow-Origin": "https://www.proofofputt.com",
+        "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Max-Age": "86400"
+      },
+      "continue": true
+    },
+    { "src": "/leagues/(.*)", "methods": ["GET", "POST", "PUT", "DELETE"], "dest": "api.py" },
+    {
+      "src": "/duels/(.*)",
+      "methods": ["OPTIONS"],
+      "headers": {
+        "Access-Control-Allow-Origin": "https://www.proofofputt.com",
+        "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Max-Age": "86400"
+      },
+      "continue": true
+    },
+    { "src": "/duels/(.*)", "methods": ["GET", "POST", "PUT", "DELETE"], "dest": "api.py" },
+    {
+      "src": "/player/(.*)",
+      "methods": ["OPTIONS"],
+      "headers": {
+        "Access-Control-Allow-Origin": "https://www.proofofputt.com",
+        "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Max-Age": "86400"
+      },
+      "continue": true
+    },
+    { "src": "/player/(.*)", "methods": ["GET", "POST", "PUT", "DELETE"], "dest": "api.py" },
+    {
+      "src": "/players/(.*)",
+      "methods": ["OPTIONS"],
+      "headers": {
+        "Access-Control-Allow-Origin": "https://www.proofofputt.com",
+        "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Max-Age": "86400"
+      },
+      "continue": true
+    },
+    { "src": "/players/(.*)", "methods": ["GET", "POST", "PUT", "DELETE"], "dest": "api.py" },
+    {
+      "src": "/notifications/(.*)",
+      "methods": ["OPTIONS"],
+      "headers": {
+        "Access-Control-Allow-Origin": "https://www.proofofputt.com",
+        "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Max-Age": "86400"
+      },
+      "continue": true
+    },
+    { "src": "/notifications/(.*)", "methods": ["GET", "POST", "PUT", "DELETE"], "dest": "api.py" },
+    {
+      "src": "/start-session",
+      "methods": ["OPTIONS"],
+      "headers": {
+        "Access-Control-Allow-Origin": "https://www.proofofputt.com",
+        "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Max-Age": "86400"
+      },
+      "continue": true
+    },
+    { "src": "/start-session", "methods": ["POST"], "dest": "api.py" },
+    {
+      "src": "/start-calibration",
+      "methods": ["OPTIONS"],
+      "headers": {
+        "Access-Control-Allow-Origin": "https://www.proofofputt.com",
+        "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Max-Age": "86400"
+      },
+      "continue": true
+    },
+    { "src": "/start-calibration", "methods": ["POST"], "dest": "api.py" },
+    {
+      "src": "/coach/conversations",
+      "methods": ["OPTIONS"],
+      "headers": {
+        "Access-Control-Allow-Origin": "https://www.proofofputt.com",
+        "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Max-Age": "86400"
+      },
+      "continue": true
+    },
+    { "src": "/coach/conversations", "methods": ["GET"], "dest": "api.py" },
+    {
+      "src": "/coach/conversation/(.*)",
+      "methods": ["OPTIONS"],
+      "headers": {
+        "Access-Control-Allow-Origin": "https://www.proofofputt.com",
+        "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Max-Age": "86400"
+      },
+      "continue": true
+    },
+    { "src": "/coach/conversation/(.*)", "methods": ["GET", "POST"], "dest": "api.py" },
     { "src": "/(.*)", "dest": "api.py" }
   ]
 }
