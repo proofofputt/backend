@@ -412,11 +412,23 @@ def login_with_email_password(email, password):
         return None, None, None, None, None, None, None
 
 def get_player_stats(player_id):
-    # This is a placeholder. In a real application, you would query your player_stats table.
-    return {"total_putts": 100, "total_makes": 50}
+    pool = get_db_connection()
+    with pool.connect() as conn:
+        result = conn.execute(
+            sqlalchemy.text("SELECT total_putts, total_makes, total_misses, best_streak, fastest_21_makes FROM player_stats WHERE player_id = :player_id"),
+            {"player_id": player_id}
+        ).mappings().first()
+        if result:
+            return dict(result)
+        return None
 
 def get_sessions_for_player(player_id, limit=25, offset=0):
-    # This is a placeholder. In a real application, you would query your sessions table.
-    return [{"session_id": 1, "total_putts": 20, "total_makes": 10}]
+    pool = get_db_connection()
+    with pool.connect() as conn:
+        result = conn.execute(
+            sqlalchemy.text("SELECT session_id, start_time, end_time, status, total_putts, total_makes, total_misses, best_streak, fastest_21_makes, putts_per_minute, makes_per_minute, most_makes_in_60_seconds, session_duration, putt_list, makes_by_category, misses_by_category FROM sessions WHERE player_id = :player_id ORDER BY start_time DESC LIMIT :limit OFFSET :offset"),
+            {"player_id": player_id, "limit": limit, "offset": offset}
+        ).mappings().fetchall()
+        return [dict(row) for row in result]
 
 # ... (rest of the file is the same) ...
