@@ -42,6 +42,10 @@ def handle_generic_exception(e):
     app.logger.error(f"An unexpected server error occurred: {e}", exc_info=True)
     return jsonify({"error": "An unexpected server error occurred."}), 500
 
+@app.route('/favicon.ico')
+def favicon():
+    return '', 204
+
 def subscription_required(f):
     """A decorator to protect routes that require a subscription."""
     @wraps(f)
