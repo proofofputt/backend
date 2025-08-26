@@ -394,4 +394,29 @@ def register_player(email, password, name):
             except IntegrityError as e:
                 raise ValueError("A player with this email already exists.")
 
+def login_with_email_password(email, password):
+    """Authenticates a player with email and password."""
+    pool = get_db_connection()
+    with pool.connect() as conn:
+        result = conn.execute(
+            sqlalchemy.text("SELECT player_id, name, email, password_hash, timezone, subscription_status FROM players WHERE email = :email"),
+            {"email": email}
+        ).mappings().first()
+
+        if result and bcrypt.checkpw(password.encode('utf-8'), result['password_hash'].encode('utf-8')):
+            player_id = result['player_id']
+            stats = get_player_stats(player_id)
+            sessions = get_sessions_for_player(player_id, limit=25)
+            return player_id, result['name'], result['email'], stats, sessions, result['timezone'], result['subscription_status']
+        
+        return None, None, None, None, None, None, None
+
+def get_player_stats(player_id):
+    # This is a placeholder. In a real application, you would query your player_stats table.
+    return {"total_putts": 100, "total_makes": 50}
+
+def get_sessions_for_player(player_id, limit=25, offset=0):
+    # This is a placeholder. In a real application, you would query your sessions table.
+    return [{"session_id": 1, "total_putts": 20, "total_makes": 10}]
+
 # ... (rest of the file is the same) ...
