@@ -57,11 +57,11 @@ def subscription_required(f):
             player_id = request.args.get('player_id', type=int)
 
         if not player_id:
-            return jsonify({"error": "Player identification is required for this feature."}), 400
+            return jsonify({"error": "Player identification is required for this feature."} ), 400
 
         player_info = data_manager.get_player_info(player_id)
         if not player_info or player_info.get('subscription_status') != 'active':
-            return jsonify({"error": "This feature requires a full subscription."}), 403
+            return jsonify({"error": "This feature requires a full subscription."} ), 403
         return f(*args, **kwargs)
     return decorated_function
 
@@ -143,7 +143,7 @@ def login():
             return jsonify({"error": "Invalid credentials"}), 401
     except Exception as e:
         app.logger.error(f"Login failed: {e}", exc_info=True)
-        return jsonify({"error": "An internal error occurred during login."}), 500
+        return jsonify({"error": "An internal error occurred during login."} ), 500
 
 @app.route('/register', methods=['POST'])
 def register():
@@ -170,12 +170,12 @@ def register():
                 "is_new_user": True
             }), 201
         else:
-            return jsonify({"error": "Registration successful, but failed to log in automatically."}), 500
+            return jsonify({"error": "Registration successful, but failed to log in automatically."} ), 500
     except ValueError as e:
         return jsonify({"error": str(e)}), 409
     except Exception as e:
         app.logger.error(f"Registration failed: {e}", exc_info=True)
-        return jsonify({"error": "An internal error occurred during registration."}), 500
+        return jsonify({"error": "An internal error occurred during registration."} ), 500
 
 @app.route('/player/<int:player_id>/data', methods=['GET'])
 def get_player_data(player_id):
@@ -215,13 +215,13 @@ def get_career_stats_api(player_id):
     """
     player_info = data_manager.get_player_info(player_id)
     if not player_info:
-        return jsonify({"error": "Player not found."}), 404
+        return jsonify({"error": "Player not found."} ), 404
     
     is_subscribed = player_info.get('subscription_status') == 'active'
 
     stats = data_manager.get_career_stats(player_id)
     if stats is None:
-        return jsonify({"error": "Could not calculate stats for this player."}), 404
+        return jsonify({"error": "Could not calculate stats for this player."} ), 404
     
     stats['is_subscribed'] = is_subscribed
     return jsonify(stats), 200
@@ -240,21 +240,21 @@ def update_player_socials_api(player_id):
     data = request.get_json()
     # Basic validation to ensure we have a dictionary
     if not isinstance(data, dict):
-        return jsonify({"error": "Invalid data format. Expected a JSON object."}), 400
+        return jsonify({"error": "Invalid data format. Expected a JSON object."} ), 400
     
     # Filter for allowed keys to prevent unwanted updates
     allowed_keys = {'x_url', 'tiktok_url', 'website_url'}
     socials_to_update = {k: v for k, v in data.items() if k in allowed_keys}
 
     if not socials_to_update:
-        return jsonify({"error": "No valid social link fields provided."}), 400
+        return jsonify({"error": "No valid social link fields provided."} ), 400
 
     try:
         data_manager.update_player_socials(player_id, socials_to_update)
-        return jsonify({"message": "Social links updated successfully."}), 200
+        return jsonify({"message": "Social links updated successfully."} ), 200
     except Exception as e:
         app.logger.error(f"Failed to update social links for player {player_id}: {e}", exc_info=True)
-        return jsonify({"error": "An internal error occurred."}), 500
+        return jsonify({"error": "An internal error occurred."} ), 500
 
 @app.route('/player/<int:player_id>/name', methods=['PUT'])
 def update_player_name_api(player_id):
@@ -262,13 +262,13 @@ def update_player_name_api(player_id):
     data = request.get_json()
     new_name = data.get('name', '').strip()
     if not new_name:
-        return jsonify({"error": "Name cannot be empty."}), 400
+        return jsonify({"error": "Name cannot be empty."} ), 400
     try:
         data_manager.update_player_name(player_id, new_name)
-        return jsonify({"message": "Name updated successfully."}), 200
+        return jsonify({"message": "Name updated successfully."} ), 200
     except Exception as e:
         app.logger.error(f"Failed to update name for player {player_id}: {e}", exc_info=True)
-        return jsonify({"error": "An internal error occurred."}), 500
+        return jsonify({"error": "An internal error occurred."} ), 500
 
 @app.route('/player/<int:player_id>/timezone', methods=['PUT'])
 def update_player_timezone_api(player_id):
@@ -276,13 +276,13 @@ def update_player_timezone_api(player_id):
     data = request.get_json()
     new_timezone = data.get('timezone', '').strip()
     if not new_timezone:
-        return jsonify({"error": "Timezone cannot be empty."}), 400
+        return jsonify({"error": "Timezone cannot be empty."} ), 400
     try:
         data_manager.update_player_timezone(player_id, new_timezone)
-        return jsonify({"message": "Timezone updated successfully."}), 200
+        return jsonify({"message": "Timezone updated successfully."} ), 200
     except Exception as e:
         app.logger.error(f"Failed to update timezone for player {player_id}: {e}", exc_info=True)
-        return jsonify({"error": "An internal error occurred."}), 500
+        return jsonify({"error": "An internal error occurred."} ), 500
 
 @app.route('/player/<int:player_id>/password', methods=['PUT'])
 def change_password_api(player_id):
@@ -319,7 +319,7 @@ def change_password_api(player_id):
                 'password_changed_template'
             )
 
-        return jsonify({"message": "Password changed successfully."}), 200
+        return jsonify({"message": "Password changed successfully."} ), 200
     except ValueError as e:
         return jsonify({"error": str(e)}), 400
 
@@ -328,13 +328,13 @@ def update_notification_preferences_api(player_id):
     """Updates a player's notification preferences."""
     data = request.get_json()
     if not isinstance(data, dict):
-        return jsonify({"error": "Invalid data format. Expected a JSON object."}), 400
+        return jsonify({"error": "Invalid data format. Expected a JSON object."} ), 400
     try:
         data_manager.update_player_notification_preferences(player_id, data)
-        return jsonify({"message": "Notification preferences updated successfully."}), 200
+        return jsonify({"message": "Notification preferences updated successfully."} ), 200
     except Exception as e:
         app.logger.error(f"Failed to update notification preferences for player {player_id}: {e}", exc_info=True)
-        return jsonify({"error": "An internal error occurred."}), 500
+        return jsonify({"error": "An internal error occurred."} ), 500
 
 @app.route('/player/<int:player_id>/subscription/cancel', methods=['POST'])
 def cancel_subscription_api(player_id):
@@ -345,10 +345,10 @@ def cancel_subscription_api(player_id):
     """
     try:
         data_manager.cancel_player_subscription(player_id)
-        return jsonify({"message": "Subscription cancelled successfully."}), 200
+        return jsonify({"message": "Subscription cancelled successfully."} ), 200
     except Exception as e:
         app.logger.error(f"Failed to cancel subscription for player {player_id}: {e}", exc_info=True)
-        return jsonify({"error": "An internal error occurred."}), 500
+        return jsonify({"error": "An internal error occurred."} ), 500
 
 @app.route('/player/<int:player_id>/redeem-coupon', methods=['POST'])
 def redeem_coupon_api(player_id):
@@ -357,7 +357,7 @@ def redeem_coupon_api(player_id):
     coupon_code = data.get('coupon_code')
 
     if not coupon_code:
-        return jsonify({"error": "Coupon code is required."}), 400
+        return jsonify({"error": "Coupon code is required."} ), 400
 
     # For this implementation, we hardcode the special beta tester code.
     if coupon_code.upper() == 'EARLY':
@@ -388,12 +388,12 @@ def redeem_coupon_api(player_id):
                     'subscription_upgraded_template'
                 )
 
-            return jsonify({"message": "Subscription upgraded successfully."}), 200
+            return jsonify({"message": "Subscription upgraded successfully."} ), 200
         except Exception as e:
             app.logger.error(f"Failed to upgrade subscription for player {player_id}: {e}", exc_info=True)
-            return jsonify({"error": "An internal error occurred during upgrade."}), 500
+            return jsonify({"error": "An internal error occurred during upgrade."} ), 500
     else:
-        return jsonify({"error": "Invalid coupon code."}), 400
+        return jsonify({"error": "Invalid coupon code."} ), 400
 
 @app.route('/player/<int:player_id>/sessions', methods=['GET'])
 def get_player_sessions_paginated_api(player_id):
@@ -414,7 +414,7 @@ def get_player_sessions_paginated_api(player_id):
         }), 200
     except Exception as e:
         app.logger.error(f"Failed to get paginated sessions for player {player_id}: {e}", exc_info=True)
-        return jsonify({"error": "Failed to retrieve session history."}), 500
+        return jsonify({"error": "Failed to retrieve session history."} ), 500
 
 # --- Session and Calibration Routes ---
 @app.route('/start-session', methods=['POST'])
@@ -464,7 +464,7 @@ def start_calibration():
     python_executable = sys.executable
     script_path = os.path.join(os.path.dirname(__file__), 'calibration.py')
     subprocess.Popen([python_executable, script_path, '--camera_index', str(camera_index), '--player_id', str(player_id)])
-    return jsonify({"message": "Calibration process started."}), 202
+    return jsonify({"message": "Calibration process started."} ), 202
 
 # --- Leaderboard Routes ---
 @app.route('/leaderboard', methods=['GET'])
@@ -490,7 +490,7 @@ def create_duel_api():
     session_duration_limit_minutes = data.get('session_duration_limit_minutes')
 
     if not all([creator_id, invited_player_identifier, invitation_expiry_minutes, session_duration_limit_minutes]):
-        return jsonify({"error": "creator_id, invited_player_identifier, invitation_expiry_minutes, and session_duration_limit_minutes are required."}), 400
+        return jsonify({"error": "creator_id, invited_player_identifier, invitation_expiry_minutes, and session_duration_limit_minutes are required."} ), 400
     
     try:
         duel_id = data_manager.create_duel(creator_id, invited_player_identifier, invitation_expiry_minutes, session_duration_limit_minutes)
@@ -508,7 +508,7 @@ def create_duel_api():
         return jsonify({"message": "Duel created successfully.", "duel_id": duel_id}), 201
     except Exception as e:
         app.logger.error(f"Failed to create duel: {e}", exc_info=True)
-        return jsonify({"error": "An internal error occurred."}), 500
+        return jsonify({"error": "An internal error occurred."} ), 500
 
 @app.route('/duels/list/<int:player_id>', methods=['GET'])
 def list_duels_api(player_id):
@@ -523,15 +523,15 @@ def accept_duel_api(duel_id):
         data = request.get_json()
         player_id = data.get('player_id')
         if not player_id:
-            return jsonify({"error": "Player ID is required to accept a duel."}), 400
+            return jsonify({"error": "Player ID is required to accept a duel."} ), 400
 
         duel = data_manager.get_duel_details(duel_id)
         if not duel:
-            return jsonify({"error": "Duel not found."}), 404
+            return jsonify({"error": "Duel not found."} ), 404
         if duel.get('invited_player_id') != player_id:
-            return jsonify({"error": "You are not authorized to accept this duel."}), 403
+            return jsonify({"error": "You are not authorized to accept this duel."} ), 403
         if duel.get('status') != 'pending':
-            return jsonify({"error": "This duel is no longer pending."}), 400
+            return jsonify({"error": "This duel is no longer pending."} ), 400
 
         data_manager.accept_duel(duel_id, player_id)
         
@@ -545,7 +545,7 @@ def accept_duel_api(duel_id):
         return jsonify(updated_duels), 200
     except Exception as e:
         app.logger.error(f"Failed to accept duel {duel_id}: {e}", exc_info=True)
-        return jsonify({"error": "An internal error occurred."}), 500
+        return jsonify({"error": "An internal error occurred."} ), 500
 
 @app.route('/duels/<int:duel_id>/reject', methods=['POST'])
 def reject_duel_api(duel_id):
@@ -554,13 +554,13 @@ def reject_duel_api(duel_id):
         data = request.get_json()
         player_id = data.get('player_id')
         if not player_id:
-            return jsonify({"error": "Player ID is required to reject a duel."}), 400
+            return jsonify({"error": "Player ID is required to reject a duel."} ), 400
 
         duel = data_manager.get_duel_details(duel_id)
         if not duel:
-            return jsonify({"error": "Duel not found."}), 404
+            return jsonify({"error": "Duel not found."} ), 404
         if duel.get('invited_player_id') != player_id:
-            return jsonify({"error": "You are not authorized to reject this duel."}), 403
+            return jsonify({"error": "You are not authorized to reject this duel."} ), 403
 
         data_manager.reject_duel(duel_id)
         
@@ -574,7 +574,7 @@ def reject_duel_api(duel_id):
         return jsonify(updated_duels), 200
     except Exception as e:
         app.logger.error(f"Failed to reject duel {duel_id}: {e}", exc_info=True)
-        return jsonify({"error": "An internal error occurred."}), 500
+        return jsonify({"error": "An internal error occurred."} ), 500
 
 @app.route('/duels/<int:duel_id>/submit-session', methods=['POST'])
 def submit_duel_session_api(duel_id):
@@ -582,7 +582,7 @@ def submit_duel_session_api(duel_id):
     data = request.get_json()
     required_fields = ['session_id', 'player_id', 'score', 'duration']
     if not all(field in data for field in required_fields):
-        return jsonify({"error": "Missing required fields for duel session submission."}), 400
+        return jsonify({"error": "Missing required fields for duel session submission."} ), 400
 
     try:
         data_manager.submit_duel_session(
@@ -592,17 +592,17 @@ def submit_duel_session_api(duel_id):
             score=data['score'],
             duration=data['duration']
         )
-        return jsonify({"message": "Duel session submitted successfully."}), 200
+        return jsonify({"message": "Duel session submitted successfully."} ), 200
     except Exception as e:
         app.logger.error(f"Failed to submit session to duel {duel_id}: {e}", exc_info=True)
-        return jsonify({"error": "An internal error occurred."}), 500
+        return jsonify({"error": "An internal error occurred."} ), 500
 
 # --- Leagues Routes ---
 @app.route('/leagues', methods=['GET'])
 def list_leagues_api():
     player_id = request.args.get('player_id', type=int)
     if not player_id:
-        return jsonify({"error": "Missing player_id query parameter."}), 400
+        return jsonify({"error": "Missing player_id query parameter."} ), 400
     leagues = data_manager.get_leagues_for_player(player_id)
     return jsonify(leagues), 200
 
@@ -613,7 +613,7 @@ def create_league_api():
     data = request.get_json()
     required_fields = ['creator_id', 'name', 'privacy_type', 'settings']
     if not all(field in data for field in required_fields):
-        return jsonify({"error": "Missing required fields for league creation."}), 400
+        return jsonify({"error": "Missing required fields for league creation."} ), 400
     
     try:
         league_id = data_manager.create_league(
@@ -626,13 +626,13 @@ def create_league_api():
         return jsonify({"message": "League created successfully.", "league_id": league_id}), 201
     except Exception as e:
         app.logger.error(f"Failed to create league: {e}", exc_info=True)
-        return jsonify({"error": "An internal error occurred."}), 500
+        return jsonify({"error": "An internal error occurred."} ), 500
 
 @app.route('/leagues/<int:league_id>', methods=['GET'])
 def get_league_details_api(league_id):
     details = data_manager.get_league_details(league_id)
     if not details:
-        return jsonify({"error": "League not found."}), 404
+        return jsonify({"error": "League not found."} ), 404
     return jsonify(details), 200
 
 @app.route('/leagues/<int:league_id>', methods=['DELETE'])
@@ -643,11 +643,11 @@ def delete_league_api(league_id):
     data = request.get_json()
     player_id = data.get('player_id')
     if not player_id:
-        return jsonify({"error": "player_id is required."}), 400
+        return jsonify({"error": "player_id is required."} ), 400
 
     try:
         data_manager.delete_league(league_id, player_id)
-        return jsonify({"message": "League deleted successfully."}), 200
+        return jsonify({"message": "League deleted successfully."} ), 200
     except ValueError as e:
         # Check for specific error messages to return appropriate status codes
         if "not found" in str(e).lower():
@@ -661,10 +661,10 @@ def join_league_api(league_id):
     data = request.get_json()
     player_id = data.get('player_id')
     if not player_id:
-        return jsonify({"error": "player_id is required."}), 400
+        return jsonify({"error": "player_id is required."} ), 400
     try:
         data_manager.join_league(league_id, player_id)
-        return jsonify({"message": "Successfully joined league."}), 200
+        return jsonify({"message": "Successfully joined league."} ), 200
     except ValueError as e:
         return jsonify({"error": str(e)}), 400
 
@@ -675,10 +675,10 @@ def respond_to_league_invite_api(league_id):
     player_id = data.get('player_id')
     action = data.get('action')
     if not player_id or not action:
-        return jsonify({"error": "player_id and action are required."}), 400
+        return jsonify({"error": "player_id and action are required."} ), 400
     try:
         data_manager.respond_to_league_invite(league_id, player_id, action)
-        return jsonify({"message": f"Invitation {action}ed successfully."}), 200
+        return jsonify({"message": f"Invitation {action}ed successfully."} ), 200
     except ValueError as e:
         return jsonify({"error": str(e)}), 400
 
@@ -690,7 +690,7 @@ def invite_to_league_api(league_id):
     invitee_identifier = data.get('invitee_identifier')
 
     if not inviter_id or not invitee_identifier:
-        return jsonify({"error": "inviter_id and invitee_identifier are required."}), 400
+        return jsonify({"error": "inviter_id and invitee_identifier are required."} ), 400
 
     try:
         data_manager.invite_to_league(league_id, inviter_id, invitee_identifier)
@@ -707,7 +707,7 @@ def invite_to_league_api(league_id):
         notification_service.create_in_app_notification(invitee_id, 'LEAGUE_INVITE', f'{inviter_name} has invited you to join {league_name}!', {'inviter_name': inviter_name, 'league_name': league_name, 'league_id': league_id}, '/leagues')
         notification_service.send_email_notification(invitee_id, 'LEAGUE_INVITE', f'{inviter_name} has invited you to join {league_name}!', {'inviter_name': inviter_name, 'league_name': league_name, 'league_id': league_id, 'player_email': invitee_email}, 'league_invite_template')
 
-        return jsonify({"message": "Invitation sent successfully."}), 200
+        return jsonify({"message": "Invitation sent successfully."} ), 200
     except ValueError as e:
         # This will catch permission errors, player already invited, etc.
         return jsonify({"error": str(e)}), 400
@@ -718,10 +718,10 @@ def follow_player_api(followed_id):
     data = request.get_json()
     follower_id = data.get('follower_id')
     if not follower_id:
-        return jsonify({"error": "follower_id is required."}), 400
+        return jsonify({"error": "follower_id is required."} ), 400
     try:
         data_manager.follow_player(follower_id, followed_id)
-        return jsonify({"message": f"You are now following player {followed_id}."}), 200
+        return jsonify({"message": f"You are now following player {followed_id}."} ), 200
     except ValueError as e:
         return jsonify({"error": str(e)}), 400
 
@@ -730,9 +730,9 @@ def unfollow_player_api(followed_id):
     data = request.get_json()
     follower_id = data.get('follower_id')
     if not follower_id:
-        return jsonify({"error": "follower_id is required."}), 400
+        return jsonify({"error": "follower_id is required."} ), 400
     data_manager.unfollow_player(follower_id, followed_id)
-    return jsonify({"message": f"You have unfollowed player {followed_id}."}), 200
+    return jsonify({"message": f"You have unfollowed player {followed_id}."} ), 200
 
 @app.route('/players/<int:player_id>/followers', methods=['GET'])
 def get_followers_api(player_id):
@@ -753,13 +753,13 @@ def remove_league_member_api(league_id):
     member_to_remove_id = data.get('member_to_remove_id')
 
     if not admin_id or not member_to_remove_id:
-        return jsonify({"error": "admin_id and member_to_remove_id are required."}), 400
+        return jsonify({"error": "admin_id and member_to_remove_id are required."} ), 400
 
     try:
         # Get league name before removing the member, for the notification
         league_details = data_manager.get_league_details(league_id)
         if not league_details:
-            return jsonify({"error": "League not found."}), 404
+            return jsonify({"error": "League not found."} ), 404
         league_name = league_details.get('name', 'a league')
 
         data_manager.remove_league_member(league_id, admin_id, member_to_remove_id)
@@ -772,12 +772,12 @@ def remove_league_member_api(league_id):
             {'league_name': league_name, 'league_id': league_id}
         )
 
-        return jsonify({"message": "Member removed successfully."}), 200
+        return jsonify({"message": "Member removed successfully."} ), 200
     except ValueError as e:
         return jsonify({"error": str(e)}), 400
     except Exception as e:
         app.logger.error(f"Failed to remove member from league {league_id}: {e}", exc_info=True)
-        return jsonify({"error": "An internal error occurred."}), 500
+        return jsonify({"error": "An internal error occurred."} ), 500
 
 @app.route('/zaprite-webhook', methods=['POST'])
 def zaprite_webhook():
@@ -789,13 +789,13 @@ def zaprite_webhook():
     customer_email = data.get('customer', {}).get('email')
 
     if not customer_email:
-        return jsonify({"status": "ignored", "reason": "No customer email provided."}), 200
+        return jsonify({"status": "ignored", "reason": "No customer email provided."} ), 200
 
     # Get player_id from email. This is crucial for linking the webhook to our system.
     player_id = data_manager.get_player_by_name(customer_email)
     if not player_id:
         app.logger.warning(f"Received webhook for unknown email: {customer_email}")
-        return jsonify({"status": "ignored", "reason": "Player not found for the provided email."}), 200
+        return jsonify({"status": "ignored", "reason": "Player not found for the provided email."} ), 200
     
     player_info = data_manager.get_player_info(player_id)
     player_name = player_info.get('name', f'Player {player_id}')
@@ -850,7 +850,7 @@ def create_fundraiser_api():
     # Basic validation
     required_fields = ['player_id', 'name', 'cause', 'goal_amount', 'start_time', 'end_time']
     if not all(field in data for field in required_fields):
-        return jsonify({"error": "Missing required fields."}), 400
+        return jsonify({"error": "Missing required fields."} ), 400
 
     try:
         fundraiser_id = data_manager.create_fundraiser(
@@ -871,7 +871,7 @@ def create_fundraiser_api():
         return jsonify({"message": "Fundraiser created successfully.", "fundraiser_id": fundraiser_id}), 201
     except Exception as e:
         app.logger.error(f"Failed to create fundraiser: {e}", exc_info=True)
-        return jsonify({"error": "An internal error occurred."}), 500
+        return jsonify({"error": "An internal error occurred."} ), 500
 
 @app.route('/fundraisers', methods=['GET'])
 def list_fundraisers_api():
@@ -881,7 +881,7 @@ def list_fundraisers_api():
         return jsonify(fundraisers), 200
     except Exception as e:
         app.logger.error(f"Failed to list fundraisers: {e}", exc_info=True)
-        return jsonify({"error": "An internal error occurred."}), 500
+        return jsonify({"error": "An internal error occurred."} ), 500
 
 @app.route('/fundraisers/<int:fundraiser_id>', methods=['GET'])
 def get_fundraiser_details_api(fundraiser_id):
@@ -889,11 +889,11 @@ def get_fundraiser_details_api(fundraiser_id):
     try:
         details = data_manager.get_fundraiser_details(fundraiser_id)
         if not details:
-            return jsonify({"error": "Fundraiser not found."}), 404
+            return jsonify({"error": "Fundraiser not found."} ), 404
         return jsonify(details), 200
     except Exception as e:
         app.logger.error(f"Failed to get fundraiser details for {fundraiser_id}: {e}", exc_info=True)
-        return jsonify({"error": "An internal error occurred."}), 500
+        return jsonify({"error": "An internal error occurred."} ), 500
 
 @app.route('/players/<int:player_id>/pledges', methods=['GET'])
 def get_player_pledges_api(player_id):
@@ -908,7 +908,7 @@ def pledge_api(fundraiser_id):
     max_donation = data.get('max_donation')
 
     if not pledger_player_id or not amount_per_putt:
-        return jsonify({"error": "pledger_player_id and amount_per_putt are required."}), 400
+        return jsonify({"error": "pledger_player_id and amount_per_putt are required."} ), 400
 
     try:
         # Create the pledge
@@ -956,10 +956,10 @@ def pledge_api(fundraiser_id):
                     'new_pledge_template'
                 )
 
-        return jsonify({"message": "Pledge created successfully."}), 201
+        return jsonify({"message": "Pledge created successfully."} ), 201
     except Exception as e:
         app.logger.error(f"Failed to create pledge for fundraiser {fundraiser_id}: {e}", exc_info=True)
-        return jsonify({"error": "An internal error occurred."}), 500
+        return jsonify({"error": "An internal error occurred."} ), 500
 
 # --- Notifications API ---
 @app.route('/notifications/<int:player_id>', methods=['GET'])
@@ -980,27 +980,27 @@ def mark_notification_as_read_api(notification_id):
     data = request.get_json()
     player_id = data.get('player_id')
     if not player_id:
-        return jsonify({"error": "Player ID is required."}), 400
+        return jsonify({"error": "Player ID is required."} ), 400
     success = notification_service.mark_notification_as_read(notification_id, player_id)
     if success:
-        return jsonify({"message": "Notification marked as read."}), 200
-    return jsonify({"error": "Notification not found or not authorized."}), 404
+        return jsonify({"message": "Notification marked as read."} ), 200
+    return jsonify({"error": "Notification not found or not authorized."} ), 404
 
 @app.route('/notifications/<int:player_id>/mark_all_read', methods=['POST'])
 def mark_all_notifications_as_read_api(player_id):
     success_count = notification_service.mark_all_notifications_as_read(player_id)
-    return jsonify({"message": f"{success_count} notifications marked as read."}), 200
+    return jsonify({"message": f"{success_count} notifications marked as read."} ), 200
 
 @app.route('/notifications/<int:notification_id>', methods=['DELETE'])
 def delete_notification_api(notification_id):
     data = request.get_json()
     player_id = data.get('player_id')
     if not player_id:
-        return jsonify({"error": "Player ID is required."}), 400
+        return jsonify({"error": "Player ID is required."} ), 400
     success = notification_service.delete_notification(notification_id, player_id)
     if success:
-        return jsonify({"message": "Notification deleted."}), 200
-    return jsonify({"error": "Notification not found or not authorized."}), 404
+        return jsonify({"message": "Notification deleted."} ), 200
+    return jsonify({"error": "Notification not found or not authorized."} ), 404
 
 # --- AI Coach Endpoints ---
 @app.route('/coach/conversations', methods=['GET'])
@@ -1008,7 +1008,7 @@ def delete_notification_api(notification_id):
 def list_conversations_api():
     player_id = request.args.get('player_id', type=int)
     if not player_id:
-        return jsonify({"error": "Missing player_id query parameter."}), 400
+        return jsonify({"error": "Missing player_id query parameter."} ), 400
     return jsonify(data_manager.list_conversations(player_id))
 
 @app.route('/coach/conversations/<int:conversation_id>', methods=['GET'])
@@ -1016,7 +1016,7 @@ def list_conversations_api():
 def get_conversation_api(conversation_id):
     history = data_manager.get_conversation_history(conversation_id)
     if not history:
-        return jsonify({"error": "Conversation not found."}), 404
+        return jsonify({"error": "Conversation not found."} ), 404
     return jsonify(history)
 
 # --- AI Coach Retry Logic ---
@@ -1061,19 +1061,19 @@ def coach_chat_api():
     # This endpoint now only handles sending messages to existing conversations.
     # New conversations are created automatically on login/refresh.
     if not all([player_id, user_message, conversation_id]):
-        return jsonify({"error": "Missing player_id, message, or conversation_id in request."}), 400
+        return jsonify({"error": "Missing player_id, message, or conversation_id in request."} ), 400
 
     try:
         # Authorization check: make sure the player owns this conversation
         convo_owner_id = data_manager.get_conversation_owner(conversation_id)
         if convo_owner_id != player_id:
-            return jsonify({"error": "Not authorized to access this conversation."}), 403
+            return jsonify({"error": "Not authorized to access this conversation."} ), 403
 
         # Check message limit for existing conversation
         history = data_manager.get_conversation_history(conversation_id)
         user_message_count = sum(1 for msg in history if msg.get('role') == 'user')
         if user_message_count >= 5:
-            return jsonify({"error": "You have reached the message limit for this conversation."}), 429
+            return jsonify({"error": "You have reached the message limit for this conversation."} ), 429
 
         model = genai.GenerativeModel('gemini-1.5-flash-latest')
         chat = model.start_chat(history=history)
@@ -1084,8 +1084,7 @@ def coach_chat_api():
 
     except google_exceptions.ResourceExhausted as e:
         app.logger.error(f"AI Coach chat failed for player {player_id} due to rate limiting after retries: {e}", exc_info=True)
-        return jsonify({"error": "The AI Coach is currently overloaded. Please try again in a few minutes."}), 429
+        return jsonify({"error": "The AI Coach is currently overloaded. Please try again in a few minutes."} ), 429
     except Exception as e:
         app.logger.error(f"AI Coach chat failed for player {player_id}: {e}", exc_info=True)
-        return jsonify({"error": f"The AI Coach encountered an error: {e}"}), 503
-
+        return jsonify({"error": f"The AI Coach encountered an error: {e}"} ), 503

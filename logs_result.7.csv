@@ -1,0 +1,115 @@
+"TimeUTC","timestampInMs","requestPath","requestMethod","requestQueryString","responseStatusCode","requestId","requestUserAgent","level","environment","branch","vercelCache","type","function","host","deploymentDomain","deploymentId","durationMs","region","maxMemoryUsed","memorySize","message","projectId","traceId","sessionId","invocationId","instanceId","concurrency"
+"2025-08-26 15:58:36",1756223916132,"proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",-1,"4d78w-1756223913610-ed4f0795ad80","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app","proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app","dpl_2K2XDcqvqPqdrS16v8X4KQZgMnVj",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 19, in <module>
+import data_manager
+File ""/var/task/data_manager.py"", line 416
+""""""""), {""password_hash"": hashed_password, ""player_id"": pop_user['player_id']})
+^
+SyntaxError: unterminated string literal (detected at line 416)
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KHMFRGHEZXRMNMT4BS7AV9","",-1
+"2025-08-26 15:58:33",1756223913744,"proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",500,"4d78w-1756223913610-ed4f0795ad80","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app","proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app","dpl_2K2XDcqvqPqdrS16v8X4KQZgMnVj",2369,"iad1",137,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KHMFRGHEZXRMNMT4BS7AV9","",1
+"2025-08-26 15:58:33",1756223913435,"proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app/","GET","",-1,"sd7t2-1756223907998-45a551c62b0e","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app","proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app","dpl_2K2XDcqvqPqdrS16v8X4KQZgMnVj",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 19, in <module>
+import data_manager
+File ""/var/task/data_manager.py"", line 416
+""""""""), {""password_hash"": hashed_password, ""player_id"": pop_user['player_id']})
+^
+SyntaxError: unterminated string literal (detected at line 416)
+Python process exited with exit status: 1. The logs above can help with debugging the issue.
+Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 19, in <module>
+import data_manager
+File ""/var/task/data_manager.py"", line 416
+""""""""), {""password_hash"": hashed_password, ""player_id"": pop_user['player_id']})
+^
+SyntaxError: unterminated string literal (detected at line 416)
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KHMA6Z9SD52FSTNNE4EKMD","",-1
+"2025-08-26 15:58:33",1756223913282,"proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",-1,"tfvhw-1756223910667-365afa59cc94","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app","proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app","dpl_2K2XDcqvqPqdrS16v8X4KQZgMnVj",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 19, in <module>
+import data_manager
+File ""/var/task/data_manager.py"", line 416
+""""""""), {""password_hash"": hashed_password, ""player_id"": pop_user['player_id']})
+^
+SyntaxError: unterminated string literal (detected at line 416)
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KHMCWP7SKY6BRF88T1YT8H","",-1
+"2025-08-26 15:58:30",1756223910806,"proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",500,"tfvhw-1756223910667-365afa59cc94","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app","proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app","dpl_2K2XDcqvqPqdrS16v8X4KQZgMnVj",2456,"iad1",137,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KHMCWP7SKY6BRF88T1YT8H","",1
+"2025-08-26 15:58:30",1756223910519,"proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app/","GET","",-1,"78wvj-1756223907875-3351abed65b1","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app","proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app","dpl_2K2XDcqvqPqdrS16v8X4KQZgMnVj",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 19, in <module>
+import data_manager
+File ""/var/task/data_manager.py"", line 416
+""""""""), {""password_hash"": hashed_password, ""player_id"": pop_user['player_id']})
+^
+SyntaxError: unterminated string literal (detected at line 416)
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KHMA6H5YW9CYDPB30B9MXX","",-1
+"2025-08-26 15:58:29",1756223909509,"proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app/","GET","",-1,"7ttdd-1756223903809-00316303cd11","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app","proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app","dpl_2K2XDcqvqPqdrS16v8X4KQZgMnVj",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 19, in <module>
+import data_manager
+File ""/var/task/data_manager.py"", line 416
+""""""""), {""password_hash"": hashed_password, ""player_id"": pop_user['player_id']})
+^
+SyntaxError: unterminated string literal (detected at line 416)
+Python process exited with exit status: 1. The logs above can help with debugging the issue.
+Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 19, in <module>
+import data_manager
+File ""/var/task/data_manager.py"", line 416
+""""""""), {""password_hash"": hashed_password, ""player_id"": pop_user['player_id']})
+^
+SyntaxError: unterminated string literal (detected at line 416)
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KHM6B4BGV7Y84FMNTFH2Z4","",-1
+"2025-08-26 15:58:29",1756223909248,"proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app/","GET","",-1,"cr2f4-1756223903912-4523e8133e90","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app","proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app","dpl_2K2XDcqvqPqdrS16v8X4KQZgMnVj",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 19, in <module>
+import data_manager
+File ""/var/task/data_manager.py"", line 416
+""""""""), {""password_hash"": hashed_password, ""player_id"": pop_user['player_id']})
+^
+SyntaxError: unterminated string literal (detected at line 416)
+Python process exited with exit status: 1. The logs above can help with debugging the issue.
+Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 19, in <module>
+import data_manager
+File ""/var/task/data_manager.py"", line 416
+""""""""), {""password_hash"": hashed_password, ""player_id"": pop_user['player_id']})
+^
+SyntaxError: unterminated string literal (detected at line 416)
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KHM6B2WW5XY66Y1KMMZDJD","",-1
+"2025-08-26 15:58:28",1756223908063,"proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app/","GET","",500,"sd7t2-1756223907998-45a551c62b0e","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app","proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app","dpl_2K2XDcqvqPqdrS16v8X4KQZgMnVj",2397,"iad1",137,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KHMA6Z9SD52FSTNNE4EKMD","",1
+"2025-08-26 15:58:28",1756223908049,"proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app/","GET","",500,"78wvj-1756223907875-3351abed65b1","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app","proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app","dpl_2K2XDcqvqPqdrS16v8X4KQZgMnVj",2452,"iad1",137,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KHMA6H5YW9CYDPB30B9MXX","",1
+"2025-08-26 15:58:24",1756223904100,"proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app/","GET","",500,"7ttdd-1756223903809-00316303cd11","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app","proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app","dpl_2K2XDcqvqPqdrS16v8X4KQZgMnVj",2452,"iad1",137,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KHM6B4BGV7Y84FMNTFH2Z4","",1
+"2025-08-26 15:58:24",1756223904098,"proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app/","GET","",500,"cr2f4-1756223903912-4523e8133e90","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app","proofofputt-backend-l2jzju13a-nicholas-kirwans-projects.vercel.app","dpl_2K2XDcqvqPqdrS16v8X4KQZgMnVj",2311,"iad1",137,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KHM6B2WW5XY66Y1KMMZDJD","",1
