@@ -7,7 +7,7 @@
     }
   ],
   "env": {
-    "DATABASE_URL": "postgresql://neondb_owner:npg_ndS4yXqr5Gle@ep-empty-resonance-adckmfyx-pooler.c-2.us-east-1.aws.neon.tech/neondb?channel_binding=require&sslmode=require",
+    "DATABASE_URL": "postgresql://neondb_owner:npg_ndS4yXqr5Gle@ep-empty-resonance-adckmfyx-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require",
     "FRONTEND_URL": "https://www.proofofputt.com"
   },
   "routes": [
