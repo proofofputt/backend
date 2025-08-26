@@ -36,6 +36,47 @@ def get_db_connection():
 
     return pool
 
+def create_default_session_if_needed(player_id):
+    pool = get_db_connection()
+    with pool.connect() as conn:
+        # Check if the player already has any sessions
+        session_count = conn.execute(
+            sqlalchemy.text("SELECT COUNT(*) FROM sessions WHERE player_id = :player_id"),
+            {"player_id": player_id}
+        ).scalar()
+
+        if session_count == 0:
+            logger.info(f"No sessions found for player {player_id}. Creating a default session.")
+            # Insert a default session with all zero values
+            conn.execute(
+                sqlalchemy.text(
+                    "INSERT INTO sessions (player_id, start_time, end_time, status, total_putts, total_makes, total_misses, best_streak, fastest_21_makes, putts_per_minute, makes_per_minute, most_makes_in_60_seconds, session_duration, putt_list, makes_by_category, misses_by_category) "
+                    "VALUES (:player_id, :start_time, :end_time, :status, :total_putts, :total_makes, :total_misses, :best_streak, :fastest_21_makes, :putts_per_minute, :makes_per_minute, :most_makes_in_60_seconds, :session_duration, :putt_list, :makes_by_category, :misses_by_category)"
+                ),
+                {
+                    "player_id": player_id,
+                    "start_time": datetime.utcnow(),
+                    "end_time": datetime.utcnow(),
+                    "status": "completed",
+                    "total_putts": 0,
+                    "total_makes": 0,
+                    "total_misses": 0,
+                    "best_streak": 0,
+                    "fastest_21_makes": 0.0,
+                    "putts_per_minute": 0.0,
+                    "makes_per_minute": 0.0,
+                    "most_makes_in_60_seconds": 0,
+                    "session_duration": 0.0,
+                    "putt_list": "[]",
+                    "makes_by_category": "{}",
+                    "misses_by_category": "{}"
+                }
+            )
+            conn.commit() # Commit the session creation
+            logger.info(f"Default session created for player {player_id}.")
+        else:
+            logger.info(f"Player {player_id} already has sessions. Skipping default session creation.")
+
 def initialize_database():
     """Creates the database tables if they don't exist and ensures the default user is present."""
     pool = get_db_connection()
@@ -351,6 +392,7 @@ def initialize_database():
                 conn.execute(sqlalchemy.text("INSERT INTO player_stats (player_id) VALUES (:player_id)"), {"player_id": player_id})
                 pop_user = {'player_id': player_id, 'subscription_status': 'free'}
                 logger.info(f"Registered new default player 'POP' with ID {player_id}.")
+                create_default_session_if_needed(player_id) # Add this line
 
             else:
                 logger.info(f"Default user {pop_user['player_id']} found. Ensuring password hash is bcrypt compatible.")
@@ -359,6 +401,7 @@ def initialize_database():
                     UPDATE players SET password_hash = :password_hash
                     WHERE player_id = :player_id
                 '''), {"password_hash": hashed_password, "player_id": pop_user['player_id']})
+                create_default_session_if_needed(pop_user['player_id']) # Add this line
             
             if pop_user and pop_user['subscription_status'] != 'active':
                 logger.info(f"Upgrading default user {pop_user['player_id']} to 'active' subscription status.")
@@ -389,6 +432,9 @@ def register_player(email, password, name):
 
                 conn.execute(sqlalchemy.text("INSERT INTO player_stats (player_id) VALUES (:player_id)"), {"player_id": player_id})
                 
+                # Call the new function to create a default session if needed
+                create_default_session_if_needed(player_id)
+
                 logger.info(f"Registered new player '{name}' with ID {player_id}.")
                 return player_id, name
             except IntegrityError as e:

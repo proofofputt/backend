@@ -11,9 +11,16 @@
     "FRONTEND_URL": "https://www.proofofputt.com"
   },
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "api.py"
-    }
+    { "src": "/login", "methods": ["GET", "POST", "OPTIONS"], "dest": "api.py" },
+    { "src": "/register", "methods": ["GET", "POST", "OPTIONS"], "dest": "api.py" },
+    { "src": "/leagues", "methods": ["GET", "POST", "OPTIONS"], "dest": "api.py" },
+    { "src": "/leagues/(.*)", "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"], "dest": "api.py" },
+    { "src": "/duels/(.*)", "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"], "dest": "api.py" },
+    { "src": "/player/(.*)", "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"], "dest": "api.py" },
+    { "src": "/players/(.*)", "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"], "dest": "api.py" },
+    { "src": "/notifications/(.*)", "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"], "dest": "api.py" },
+    { "src": "/start-session", "methods": ["GET", "POST", "OPTIONS"], "dest": "api.py" },
+    { "src": "/start-calibration", "methods": ["GET", "POST", "OPTIONS"], "dest": "api.py" },
+    { "src": "/(.*)", "dest": "api.py" }
   ]
 }
