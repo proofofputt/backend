@@ -27,7 +27,7 @@ except Exception as e:
     logging.warning(f"Could not configure Gemini API. AI Coach will be disabled. Error: {e}")
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": os.environ.get("FRONTEND_URL", "http://localhost:5173"), "allow_headers": "Content-Type"}})
+CORS(app)
 
 # Initialize database and create default user once when the app starts
 with app.app_context():
