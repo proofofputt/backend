@@ -10,6 +10,7 @@ tenacity
 # Database
 sqlalchemy
 bcrypt
+psycopg2-binary
 
 # Computer Vision
 
