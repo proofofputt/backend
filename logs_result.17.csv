@@ -1,0 +1,659 @@
+"TimeUTC","timestampInMs","requestPath","requestMethod","requestQueryString","responseStatusCode","requestId","requestUserAgent","level","environment","branch","vercelCache","type","function","host","deploymentDomain","deploymentId","durationMs","region","maxMemoryUsed","memorySize","message","projectId","traceId","sessionId","invocationId","instanceId","concurrency"
+"2025-08-26 20:22:44",1756239764911,"proofofputt-backend.vercel.app/login","OPTIONS","",-1,"h7bfg-1756239764795-d6dc17974896","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36","info","production","main","","lambda","/api.py","proofofputt-backend.vercel.app","proofofputt-backend.vercel.app","dpl_GQsM1xUK2wHgFoxwsdMRbUPhsppx",-1,"iad1",-1,-1,"127.0.0.1 - - [26/Aug/2025 20:22:44] ""OPTIONS /login HTTP/1.1"" 500 -","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0R7CYPGPXXJEYP0HNDB32","",-1
+"2025-08-26 20:22:44",1756239764911,"proofofputt-backend.vercel.app/login","OPTIONS","",-1,"h7bfg-1756239764795-d6dc17974896","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36","error","production","main","","lambda","/api.py","proofofputt-backend.vercel.app","proofofputt-backend.vercel.app","dpl_GQsM1xUK2wHgFoxwsdMRbUPhsppx",-1,"iad1",-1,-1,"ERROR:api:An unexpected server error occurred: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0R7CYPGPXXJEYP0HNDB32","",-1
+"2025-08-26 20:22:44",1756239764911,"proofofputt-backend.vercel.app/login","OPTIONS","",-1,"h7bfg-1756239764795-d6dc17974896","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36","info","production","main","","lambda","/api.py","proofofputt-backend.vercel.app","proofofputt-backend.vercel.app","dpl_GQsM1xUK2wHgFoxwsdMRbUPhsppx",-1,"iad1",-1,-1,"werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0R7CYPGPXXJEYP0HNDB32","",-1
+"2025-08-26 20:22:44",1756239764911,"proofofputt-backend.vercel.app/login","OPTIONS","",-1,"h7bfg-1756239764795-d6dc17974896","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36","info","production","main","","lambda","/api.py","proofofputt-backend.vercel.app","proofofputt-backend.vercel.app","dpl_GQsM1xUK2wHgFoxwsdMRbUPhsppx",-1,"iad1",-1,-1,"File ""/var/task/werkzeug/routing/map.py"", line 629, in match
+    raise NotFound() from None","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0R7CYPGPXXJEYP0HNDB32","",-1
+"2025-08-26 20:22:44",1756239764911,"proofofputt-backend.vercel.app/login","OPTIONS","",-1,"h7bfg-1756239764795-d6dc17974896","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36","info","production","main","","lambda","/api.py","proofofputt-backend.vercel.app","proofofputt-backend.vercel.app","dpl_GQsM1xUK2wHgFoxwsdMRbUPhsppx",-1,"iad1",-1,-1,"File ""/var/task/flask/ctx.py"", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0R7CYPGPXXJEYP0HNDB32","",-1
+"2025-08-26 20:22:44",1756239764911,"proofofputt-backend.vercel.app/login","OPTIONS","",-1,"h7bfg-1756239764795-d6dc17974896","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36","info","production","main","","lambda","/api.py","proofofputt-backend.vercel.app","proofofputt-backend.vercel.app","dpl_GQsM1xUK2wHgFoxwsdMRbUPhsppx",-1,"iad1",-1,-1,"File ""/var/task/flask/app.py"", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0R7CYPGPXXJEYP0HNDB32","",-1
+"2025-08-26 20:22:44",1756239764911,"proofofputt-backend.vercel.app/login","OPTIONS","",-1,"h7bfg-1756239764795-d6dc17974896","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36","info","production","main","","lambda","/api.py","proofofputt-backend.vercel.app","proofofputt-backend.vercel.app","dpl_GQsM1xUK2wHgFoxwsdMRbUPhsppx",-1,"iad1",-1,-1,"File ""/var/task/flask/app.py"", line 891, in dispatch_request
+    self.raise_routing_exception(req)","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0R7CYPGPXXJEYP0HNDB32","",-1
+"2025-08-26 20:22:44",1756239764911,"proofofputt-backend.vercel.app/login","OPTIONS","",-1,"h7bfg-1756239764795-d6dc17974896","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36","info","production","main","","lambda","/api.py","proofofputt-backend.vercel.app","proofofputt-backend.vercel.app","dpl_GQsM1xUK2wHgFoxwsdMRbUPhsppx",-1,"iad1",-1,-1,"File ""/var/task/flask/app.py"", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0R7CYPGPXXJEYP0HNDB32","",-1
+"2025-08-26 20:22:44",1756239764911,"proofofputt-backend.vercel.app/login","OPTIONS","",-1,"h7bfg-1756239764795-d6dc17974896","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36","info","production","main","","lambda","/api.py","proofofputt-backend.vercel.app","proofofputt-backend.vercel.app","dpl_GQsM1xUK2wHgFoxwsdMRbUPhsppx",-1,"iad1",-1,-1,"Traceback (most recent call last):","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0R7CYPGPXXJEYP0HNDB32","",-1
+"2025-08-26 20:22:44",1756239764894,"proofofputt-backend.vercel.app/login","OPTIONS","",500,"h7bfg-1756239764795-d6dc17974896","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36","error","production","main","","lambda","/api.py","proofofputt-backend.vercel.app","proofofputt-backend.vercel.app","dpl_GQsM1xUK2wHgFoxwsdMRbUPhsppx",11,"iad1",171,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0R7CYPGPXXJEYP0HNDB32","av2kJVdHsKSI",1
+"2025-08-26 20:21:10",1756239670457,"proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",-1,"8qtrb-1756239670314-8efd85211ce1","vercel-screenshot/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app","dpl_GQsM1xUK2wHgFoxwsdMRbUPhsppx",-1,"iad1",-1,-1,"127.0.0.1 - - [26/Aug/2025 20:21:10] ""GET /favicon.ico HTTP/1.1"" 204 -","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0NB5CQ60SB9M2RTY69D7X","",-1
+"2025-08-26 20:21:10",1756239670444,"proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",204,"8qtrb-1756239670314-8efd85211ce1","vercel-screenshot/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app","dpl_GQsM1xUK2wHgFoxwsdMRbUPhsppx",4,"iad1",170,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0NB5CQ60SB9M2RTY69D7X","av2kJVdHsKSI",1
+"2025-08-26 20:21:10",1756239670363,"proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",-1,"ws97l-1756239670292-536450cddeeb","vercel-screenshot/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app","dpl_GQsM1xUK2wHgFoxwsdMRbUPhsppx",-1,"iad1",-1,-1,"127.0.0.1 - - [26/Aug/2025 20:21:10] ""GET /favicon.ico HTTP/1.1"" 204 -","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0NB24G12RYFP4YPEH085C","",-1
+"2025-08-26 20:21:10",1756239670340,"proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",204,"ws97l-1756239670292-536450cddeeb","vercel-screenshot/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app","dpl_GQsM1xUK2wHgFoxwsdMRbUPhsppx",4,"iad1",170,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0NB24G12RYFP4YPEH085C","av2kJVdHsKSI",1
+"2025-08-26 20:21:10",1756239670230,"proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app/","GET","",-1,"dvnvx-1756239665767-744770ebb8fc","vercel-screenshot/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app","dpl_GQsM1xUK2wHgFoxwsdMRbUPhsppx",-1,"iad1",-1,-1,"127.0.0.1 - - [26/Aug/2025 20:21:10] ""GET / HTTP/1.1"" 200 -","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0N6VFQETAEZ2H6RHP3WNY","",-1
+"2025-08-26 20:21:10",1756239670221,"proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app/","GET","",-1,"6zrjk-1756239669913-84267b953a60","vercel-screenshot/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app","dpl_GQsM1xUK2wHgFoxwsdMRbUPhsppx",-1,"iad1",-1,-1,"127.0.0.1 - - [26/Aug/2025 20:21:10] ""GET / HTTP/1.1"" 200 -","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0NAXGJVEGRM90B1TB34K8","",-1
+"2025-08-26 20:21:10",1756239670215,"proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app/","GET","",-1,"k7p69-1756239669832-08e89a3d2832","vercel-screenshot/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app","dpl_GQsM1xUK2wHgFoxwsdMRbUPhsppx",-1,"iad1",-1,-1,"127.0.0.1 - - [26/Aug/2025 20:21:10] ""GET / HTTP/1.1"" 200 -","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0NAXFW6N0FQYZ90JR031M","",-1
+"2025-08-26 20:21:10",1756239670192,"proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app/","GET","",200,"6zrjk-1756239669913-84267b953a60","vercel-screenshot/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app","dpl_GQsM1xUK2wHgFoxwsdMRbUPhsppx",5,"iad1",170,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0NAXGJVEGRM90B1TB34K8","GN48MUzajJDB",1
+"2025-08-26 20:21:10",1756239670191,"proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app/","GET","",200,"k7p69-1756239669832-08e89a3d2832","vercel-screenshot/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app","dpl_GQsM1xUK2wHgFoxwsdMRbUPhsppx",6,"iad1",170,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0NAXFW6N0FQYZ90JR031M","J1jy4WRn8mlV",1
+"2025-08-26 20:21:09",1756239669817,"proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app/","GET","",-1,"2xzfh-1756239665870-d865e8c6b8c4","vercel-screenshot/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app","dpl_GQsM1xUK2wHgFoxwsdMRbUPhsppx",-1,"iad1",-1,-1,"127.0.0.1 - - [26/Aug/2025 20:21:09] ""GET / HTTP/1.1"" 200 -","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0N6VEBMGQ6Y246MF3G46B","",-1
+"2025-08-26 20:21:06",1756239666031,"proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app/","GET","",200,"dvnvx-1756239665767-744770ebb8fc","vercel-screenshot/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app","dpl_GQsM1xUK2wHgFoxwsdMRbUPhsppx",5,"iad1",170,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0N6VFQETAEZ2H6RHP3WNY","av2kJVdHsKSI",1
+"2025-08-26 20:21:06",1756239666030,"proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app/","GET","",200,"2xzfh-1756239665870-d865e8c6b8c4","vercel-screenshot/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ihvr8296s-nicholas-kirwans-projects.vercel.app","dpl_GQsM1xUK2wHgFoxwsdMRbUPhsppx",5,"iad1",170,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0N6VEBMGQ6Y246MF3G46B","GN48MUzajJDB",1
+"2025-08-26 20:18:36",1756239516517,"proofofputt-backend.vercel.app/login","OPTIONS","",-1,"hgwqw-1756239513156-20dca1e79987","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36","error","production","main","","lambda","/api.py","proofofputt-backend.vercel.app","proofofputt-backend.vercel.app","dpl_E6xAKojDokieYbcTcvxkAyUkmFpW",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 34, in <module>
+data_manager.initialize_database()
+File ""/var/task/data_manager.py"", line 41, in initialize_database
+pool = get_db_connection()
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/data_manager.py"", line 31, in get_db_connection
+pool = sqlalchemy.create_engine(db_url)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""<string>"", line 2, in create_engine
+File ""/var/task/sqlalchemy/util/deprecations.py"", line 281, in warned
+return fn(*args, **kwargs)  # type: ignore[no-any-return]
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/create.py"", line 564, in create_engine
+u = _url.make_url(url)
+^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 856, in make_url
+return _parse_url(name_or_url)
+^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 922, in _parse_url
+raise exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0GHMR80REAE73FQECWB71","",-1
+"2025-08-26 20:18:33",1756239513240,"proofofputt-backend.vercel.app/login","OPTIONS","",500,"hgwqw-1756239513156-20dca1e79987","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36","error","production","main","","lambda","/api.py","proofofputt-backend.vercel.app","proofofputt-backend.vercel.app","dpl_E6xAKojDokieYbcTcvxkAyUkmFpW",3260,"iad1",159,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0GHMR80REAE73FQECWB71","",1
+"2025-08-26 20:17:42",1756239462770,"proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"l6j4z-1756239459346-d85db88b8a81","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","dpl_E6xAKojDokieYbcTcvxkAyUkmFpW",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 34, in <module>
+data_manager.initialize_database()
+File ""/var/task/data_manager.py"", line 41, in initialize_database
+pool = get_db_connection()
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/data_manager.py"", line 31, in get_db_connection
+pool = sqlalchemy.create_engine(db_url)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""<string>"", line 2, in create_engine
+File ""/var/task/sqlalchemy/util/deprecations.py"", line 281, in warned
+return fn(*args, **kwargs)  # type: ignore[no-any-return]
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/create.py"", line 564, in create_engine
+u = _url.make_url(url)
+^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 856, in make_url
+return _parse_url(name_or_url)
+^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 922, in _parse_url
+raise exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0EX1YD67DQVBGA2EQ08VT","",-1
+"2025-08-26 20:17:39",1756239459390,"proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",500,"l6j4z-1756239459346-d85db88b8a81","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","dpl_E6xAKojDokieYbcTcvxkAyUkmFpW",3358,"iad1",158,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0EX1YD67DQVBGA2EQ08VT","",1
+"2025-08-26 20:17:38",1756239458229,"proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"bdsbm-1756239454861-6f0067d19008","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","dpl_E6xAKojDokieYbcTcvxkAyUkmFpW",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 34, in <module>
+data_manager.initialize_database()
+File ""/var/task/data_manager.py"", line 41, in initialize_database
+pool = get_db_connection()
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/data_manager.py"", line 31, in get_db_connection
+pool = sqlalchemy.create_engine(db_url)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""<string>"", line 2, in create_engine
+File ""/var/task/sqlalchemy/util/deprecations.py"", line 281, in warned
+return fn(*args, **kwargs)  # type: ignore[no-any-return]
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/create.py"", line 564, in create_engine
+u = _url.make_url(url)
+^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 856, in make_url
+return _parse_url(name_or_url)
+^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 922, in _parse_url
+raise exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0ERNQQMWQECCCWVX4FWA0","",-1
+"2025-08-26 20:17:34",1756239454903,"proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",500,"bdsbm-1756239454861-6f0067d19008","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","dpl_E6xAKojDokieYbcTcvxkAyUkmFpW",3307,"iad1",158,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0ERNQQMWQECCCWVX4FWA0","",1
+"2025-08-26 20:17:34",1756239454803,"proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",-1,"5545m-1756239451447-6e3b5051c15f","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","dpl_E6xAKojDokieYbcTcvxkAyUkmFpW",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 34, in <module>
+data_manager.initialize_database()
+File ""/var/task/data_manager.py"", line 41, in initialize_database
+pool = get_db_connection()
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/data_manager.py"", line 31, in get_db_connection
+pool = sqlalchemy.create_engine(db_url)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""<string>"", line 2, in create_engine
+File ""/var/task/sqlalchemy/util/deprecations.py"", line 281, in warned
+return fn(*args, **kwargs)  # type: ignore[no-any-return]
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/create.py"", line 564, in create_engine
+u = _url.make_url(url)
+^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 856, in make_url
+return _parse_url(name_or_url)
+^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 922, in _parse_url
+raise exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0ENB7HT7Q5XVBKQZ4NV6A","",-1
+"2025-08-26 20:17:31",1756239451495,"proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",500,"5545m-1756239451447-6e3b5051c15f","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","dpl_E6xAKojDokieYbcTcvxkAyUkmFpW",3290,"iad1",159,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0ENB7HT7Q5XVBKQZ4NV6A","",1
+"2025-08-26 20:17:29",1756239449311,"proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",-1,"dclvf-1756239445777-5f7ac77282e3","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","dpl_E6xAKojDokieYbcTcvxkAyUkmFpW",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 34, in <module>
+data_manager.initialize_database()
+File ""/var/task/data_manager.py"", line 41, in initialize_database
+pool = get_db_connection()
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/data_manager.py"", line 31, in get_db_connection
+pool = sqlalchemy.create_engine(db_url)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""<string>"", line 2, in create_engine
+File ""/var/task/sqlalchemy/util/deprecations.py"", line 281, in warned
+return fn(*args, **kwargs)  # type: ignore[no-any-return]
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/create.py"", line 564, in create_engine
+u = _url.make_url(url)
+^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 856, in make_url
+return _parse_url(name_or_url)
+^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 922, in _parse_url
+raise exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0EFSW7E2WETWR2ZPBKDYD","",-1
+"2025-08-26 20:17:25",1756239445820,"proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",500,"dclvf-1756239445777-5f7ac77282e3","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","dpl_E6xAKojDokieYbcTcvxkAyUkmFpW",3477,"iad1",161,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0EFSW7E2WETWR2ZPBKDYD","",1
+"2025-08-26 20:17:24",1756239444591,"proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",-1,"dbdch-1756239441120-d031407ac08e","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","dpl_E6xAKojDokieYbcTcvxkAyUkmFpW",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 34, in <module>
+data_manager.initialize_database()
+File ""/var/task/data_manager.py"", line 41, in initialize_database
+pool = get_db_connection()
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/data_manager.py"", line 31, in get_db_connection
+pool = sqlalchemy.create_engine(db_url)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""<string>"", line 2, in create_engine
+File ""/var/task/sqlalchemy/util/deprecations.py"", line 281, in warned
+return fn(*args, **kwargs)  # type: ignore[no-any-return]
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/create.py"", line 564, in create_engine
+u = _url.make_url(url)
+^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 856, in make_url
+return _parse_url(name_or_url)
+^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 922, in _parse_url
+raise exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0EB8H9162EVPG8R9FW2Z1","",-1
+"2025-08-26 20:17:22",1756239442120,"proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app/","GET","",-1,"d9frc-1756239438014-c655f7c4ae80","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","dpl_E6xAKojDokieYbcTcvxkAyUkmFpW",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 34, in <module>
+data_manager.initialize_database()
+File ""/var/task/data_manager.py"", line 41, in initialize_database
+pool = get_db_connection()
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/data_manager.py"", line 31, in get_db_connection
+pool = sqlalchemy.create_engine(db_url)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""<string>"", line 2, in create_engine
+File ""/var/task/sqlalchemy/util/deprecations.py"", line 281, in warned
+return fn(*args, **kwargs)  # type: ignore[no-any-return]
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/create.py"", line 564, in create_engine
+u = _url.make_url(url)
+^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 856, in make_url
+return _parse_url(name_or_url)
+^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 922, in _parse_url
+raise exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0E8A6MAQEGSBC6G0BHJ7J","",-1
+"2025-08-26 20:17:21",1756239441169,"proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",500,"dbdch-1756239441120-d031407ac08e","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","dpl_E6xAKojDokieYbcTcvxkAyUkmFpW",3405,"iad1",158,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0EB8H9162EVPG8R9FW2Z1","",1
+"2025-08-26 20:17:18",1756239438150,"proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app/","GET","",500,"d9frc-1756239438014-c655f7c4ae80","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","dpl_E6xAKojDokieYbcTcvxkAyUkmFpW",3955,"iad1",158,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0E8A6MAQEGSBC6G0BHJ7J","",1
+"2025-08-26 20:17:17",1756239437909,"proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app/","GET","",-1,"t6vs9-1756239434077-62c4026c2062","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","dpl_E6xAKojDokieYbcTcvxkAyUkmFpW",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 34, in <module>
+data_manager.initialize_database()
+File ""/var/task/data_manager.py"", line 41, in initialize_database
+pool = get_db_connection()
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/data_manager.py"", line 31, in get_db_connection
+pool = sqlalchemy.create_engine(db_url)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""<string>"", line 2, in create_engine
+File ""/var/task/sqlalchemy/util/deprecations.py"", line 281, in warned
+return fn(*args, **kwargs)  # type: ignore[no-any-return]
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/create.py"", line 564, in create_engine
+u = _url.make_url(url)
+^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 856, in make_url
+return _parse_url(name_or_url)
+^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 922, in _parse_url
+raise exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0E4DC93VQ8MFJ5KGSD8QC","",-1
+"2025-08-26 20:17:14",1756239434156,"proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app/","GET","",500,"t6vs9-1756239434077-62c4026c2062","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","dpl_E6xAKojDokieYbcTcvxkAyUkmFpW",3734,"iad1",160,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0E4DC93VQ8MFJ5KGSD8QC","",1
+"2025-08-26 20:16:37",1756239397302,"proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",-1,"slzj2-1756239393871-2e2cf027b0af","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","dpl_E6xAKojDokieYbcTcvxkAyUkmFpW",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 34, in <module>
+data_manager.initialize_database()
+File ""/var/task/data_manager.py"", line 41, in initialize_database
+pool = get_db_connection()
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/data_manager.py"", line 31, in get_db_connection
+pool = sqlalchemy.create_engine(db_url)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""<string>"", line 2, in create_engine
+File ""/var/task/sqlalchemy/util/deprecations.py"", line 281, in warned
+return fn(*args, **kwargs)  # type: ignore[no-any-return]
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/create.py"", line 564, in create_engine
+u = _url.make_url(url)
+^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 856, in make_url
+return _parse_url(name_or_url)
+^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 922, in _parse_url
+raise exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0CX3REB8M1XW5BSEW6TPT","",-1
+"2025-08-26 20:16:36",1756239396883,"proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",-1,"xf7fv-1756239393505-7cab617ac3bb","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","dpl_E6xAKojDokieYbcTcvxkAyUkmFpW",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 34, in <module>
+data_manager.initialize_database()
+File ""/var/task/data_manager.py"", line 41, in initialize_database
+pool = get_db_connection()
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/data_manager.py"", line 31, in get_db_connection
+pool = sqlalchemy.create_engine(db_url)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""<string>"", line 2, in create_engine
+File ""/var/task/sqlalchemy/util/deprecations.py"", line 281, in warned
+return fn(*args, **kwargs)  # type: ignore[no-any-return]
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/create.py"", line 564, in create_engine
+u = _url.make_url(url)
+^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 856, in make_url
+return _parse_url(name_or_url)
+^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 922, in _parse_url
+raise exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0CWV9GHPRKH2D3RZGQG1E","",-1
+"2025-08-26 20:16:33",1756239393912,"proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",500,"slzj2-1756239393871-2e2cf027b0af","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","dpl_E6xAKojDokieYbcTcvxkAyUkmFpW",3374,"iad1",158,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0CX3REB8M1XW5BSEW6TPT","",1
+"2025-08-26 20:16:33",1756239393641,"proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",500,"xf7fv-1756239393505-7cab617ac3bb","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","dpl_E6xAKojDokieYbcTcvxkAyUkmFpW",3226,"iad1",158,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0CWV9GHPRKH2D3RZGQG1E","",1
+"2025-08-26 20:16:33",1756239393631,"proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app/","GET","",-1,"59bzr-1756239386577-f92d63e0bfe9","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","dpl_E6xAKojDokieYbcTcvxkAyUkmFpW",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 34, in <module>
+data_manager.initialize_database()
+File ""/var/task/data_manager.py"", line 41, in initialize_database
+pool = get_db_connection()
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/data_manager.py"", line 31, in get_db_connection
+pool = sqlalchemy.create_engine(db_url)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""<string>"", line 2, in create_engine
+File ""/var/task/sqlalchemy/util/deprecations.py"", line 281, in warned
+return fn(*args, **kwargs)  # type: ignore[no-any-return]
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/create.py"", line 564, in create_engine
+u = _url.make_url(url)
+^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 856, in make_url
+return _parse_url(name_or_url)
+^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 922, in _parse_url
+raise exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+Python process exited with exit status: 1. The logs above can help with debugging the issue.
+Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 34, in <module>
+data_manager.initialize_database()
+File ""/var/task/data_manager.py"", line 41, in initialize_database
+pool = get_db_connection()
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/data_manager.py"", line 31, in get_db_connection
+pool = sqlalchemy.create_engine(db_url)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""<string>"", line 2, in create_engine
+File ""/var/task/sqlalchemy/util/deprecations.py"", line 281, in warned
+return fn(*args, **kwargs)  # type: ignore[no-any-return]
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/create.py"", line 564, in create_engine
+u = _url.make_url(url)
+^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 856, in make_url
+return _parse_url(name_or_url)
+^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 922, in _parse_url
+raise exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0CP35SEDRT2G1XS3C9H5R","",-1
+"2025-08-26 20:16:33",1756239393331,"proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app/","GET","",-1,"5zdnl-1756239385918-4f783c66a235","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","dpl_E6xAKojDokieYbcTcvxkAyUkmFpW",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 34, in <module>
+data_manager.initialize_database()
+File ""/var/task/data_manager.py"", line 41, in initialize_database
+pool = get_db_connection()
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/data_manager.py"", line 31, in get_db_connection
+pool = sqlalchemy.create_engine(db_url)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""<string>"", line 2, in create_engine
+File ""/var/task/sqlalchemy/util/deprecations.py"", line 281, in warned
+return fn(*args, **kwargs)  # type: ignore[no-any-return]
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/create.py"", line 564, in create_engine
+u = _url.make_url(url)
+^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 856, in make_url
+return _parse_url(name_or_url)
+^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 922, in _parse_url
+raise exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+Python process exited with exit status: 1. The logs above can help with debugging the issue.
+Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 34, in <module>
+data_manager.initialize_database()
+File ""/var/task/data_manager.py"", line 41, in initialize_database
+pool = get_db_connection()
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/data_manager.py"", line 31, in get_db_connection
+pool = sqlalchemy.create_engine(db_url)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""<string>"", line 2, in create_engine
+File ""/var/task/sqlalchemy/util/deprecations.py"", line 281, in warned
+return fn(*args, **kwargs)  # type: ignore[no-any-return]
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/create.py"", line 564, in create_engine
+u = _url.make_url(url)
+^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 856, in make_url
+return _parse_url(name_or_url)
+^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 922, in _parse_url
+raise exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0CNEW5EGM0FJP2SKWK51T","",-1
+"2025-08-26 20:16:29",1756239389634,"proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app/","GET","",-1,"m84nq-1756239382446-9d6a121ec31d","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","dpl_E6xAKojDokieYbcTcvxkAyUkmFpW",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 34, in <module>
+data_manager.initialize_database()
+File ""/var/task/data_manager.py"", line 41, in initialize_database
+pool = get_db_connection()
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/data_manager.py"", line 31, in get_db_connection
+pool = sqlalchemy.create_engine(db_url)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""<string>"", line 2, in create_engine
+File ""/var/task/sqlalchemy/util/deprecations.py"", line 281, in warned
+return fn(*args, **kwargs)  # type: ignore[no-any-return]
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/create.py"", line 564, in create_engine
+u = _url.make_url(url)
+^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 856, in make_url
+return _parse_url(name_or_url)
+^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 922, in _parse_url
+raise exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+Python process exited with exit status: 1. The logs above can help with debugging the issue.
+Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 34, in <module>
+data_manager.initialize_database()
+File ""/var/task/data_manager.py"", line 41, in initialize_database
+pool = get_db_connection()
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/data_manager.py"", line 31, in get_db_connection
+pool = sqlalchemy.create_engine(db_url)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""<string>"", line 2, in create_engine
+File ""/var/task/sqlalchemy/util/deprecations.py"", line 281, in warned
+return fn(*args, **kwargs)  # type: ignore[no-any-return]
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/create.py"", line 564, in create_engine
+u = _url.make_url(url)
+^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 856, in make_url
+return _parse_url(name_or_url)
+^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 922, in _parse_url
+raise exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0CJ2264WQA6SP2A75S871","",-1
+"2025-08-26 20:16:29",1756239389348,"proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app/","GET","",-1,"lcklz-1756239381810-64df08ece5d2","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","dpl_E6xAKojDokieYbcTcvxkAyUkmFpW",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 34, in <module>
+data_manager.initialize_database()
+File ""/var/task/data_manager.py"", line 41, in initialize_database
+pool = get_db_connection()
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/data_manager.py"", line 31, in get_db_connection
+pool = sqlalchemy.create_engine(db_url)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""<string>"", line 2, in create_engine
+File ""/var/task/sqlalchemy/util/deprecations.py"", line 281, in warned
+return fn(*args, **kwargs)  # type: ignore[no-any-return]
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/create.py"", line 564, in create_engine
+u = _url.make_url(url)
+^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 856, in make_url
+return _parse_url(name_or_url)
+^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 922, in _parse_url
+raise exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+Python process exited with exit status: 1. The logs above can help with debugging the issue.
+Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 34, in <module>
+data_manager.initialize_database()
+File ""/var/task/data_manager.py"", line 41, in initialize_database
+pool = get_db_connection()
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/data_manager.py"", line 31, in get_db_connection
+pool = sqlalchemy.create_engine(db_url)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File ""<string>"", line 2, in create_engine
+File ""/var/task/sqlalchemy/util/deprecations.py"", line 281, in warned
+return fn(*args, **kwargs)  # type: ignore[no-any-return]
+^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/create.py"", line 564, in create_engine
+u = _url.make_url(url)
+^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 856, in make_url
+return _parse_url(name_or_url)
+^^^^^^^^^^^^^^^^^^^^^^^
+File ""/var/task/sqlalchemy/engine/url.py"", line 922, in _parse_url
+raise exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Could not parse SQLAlchemy URL from given URL string
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0CHJ4Z8WM9GMXH3349QPE","",-1
+"2025-08-26 20:16:26",1756239386725,"proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app/","GET","",500,"59bzr-1756239386577-f92d63e0bfe9","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","dpl_E6xAKojDokieYbcTcvxkAyUkmFpW",3189,"iad1",158,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0CP35SEDRT2G1XS3C9H5R","",1
+"2025-08-26 20:16:26",1756239386076,"proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app/","GET","",500,"5zdnl-1756239385918-4f783c66a235","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","dpl_E6xAKojDokieYbcTcvxkAyUkmFpW",3376,"iad1",158,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0CNEW5EGM0FJP2SKWK51T","",1
+"2025-08-26 20:16:22",1756239382594,"proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app/","GET","",500,"m84nq-1756239382446-9d6a121ec31d","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","dpl_E6xAKojDokieYbcTcvxkAyUkmFpW",3250,"iad1",158,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0CJ2264WQA6SP2A75S871","",1
+"2025-08-26 20:16:22",1756239382084,"proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app/","GET","",500,"lcklz-1756239381810-64df08ece5d2","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","proofofputt-backend-bxvie2oq5-nicholas-kirwans-projects.vercel.app","dpl_E6xAKojDokieYbcTcvxkAyUkmFpW",3307,"iad1",160,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3M0CHJ4Z8WM9GMXH3349QPE","",1
+"2025-08-26 20:08:17",1756238897376,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"62m6v-1756238897314-6743d83e5f3d","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"127.0.0.1 - - [26/Aug/2025 20:08:17] ""GET /favicon.png HTTP/1.1"" 500 -","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXR6BPV0WGTN2KM42MY4G","",-1
+"2025-08-26 20:08:17",1756238897375,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"62m6v-1756238897314-6743d83e5f3d","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"ERROR:api:An unexpected server error occurred: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXR6BPV0WGTN2KM42MY4G","",-1
+"2025-08-26 20:08:17",1756238897375,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"62m6v-1756238897314-6743d83e5f3d","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXR6BPV0WGTN2KM42MY4G","",-1
+"2025-08-26 20:08:17",1756238897375,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"62m6v-1756238897314-6743d83e5f3d","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"File ""/var/task/werkzeug/routing/map.py"", line 629, in match
+    raise NotFound() from None","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXR6BPV0WGTN2KM42MY4G","",-1
+"2025-08-26 20:08:17",1756238897375,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"62m6v-1756238897314-6743d83e5f3d","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"File ""/var/task/flask/ctx.py"", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXR6BPV0WGTN2KM42MY4G","",-1
+"2025-08-26 20:08:17",1756238897375,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"62m6v-1756238897314-6743d83e5f3d","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"File ""/var/task/flask/app.py"", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXR6BPV0WGTN2KM42MY4G","",-1
+"2025-08-26 20:08:17",1756238897375,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"62m6v-1756238897314-6743d83e5f3d","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"File ""/var/task/flask/app.py"", line 891, in dispatch_request
+    self.raise_routing_exception(req)","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXR6BPV0WGTN2KM42MY4G","",-1
+"2025-08-26 20:08:17",1756238897375,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"62m6v-1756238897314-6743d83e5f3d","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"File ""/var/task/flask/app.py"", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXR6BPV0WGTN2KM42MY4G","",-1
+"2025-08-26 20:08:17",1756238897375,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"62m6v-1756238897314-6743d83e5f3d","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"Traceback (most recent call last):","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXR6BPV0WGTN2KM42MY4G","",-1
+"2025-08-26 20:08:17",1756238897355,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",500,"62m6v-1756238897314-6743d83e5f3d","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",5,"iad1",169,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXR6BPV0WGTN2KM42MY4G","HJQuqfohIOgM",1
+"2025-08-26 20:08:15",1756238895205,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"rkd62-1756238895147-033c1d454c35","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"127.0.0.1 - - [26/Aug/2025 20:08:15] ""GET /favicon.png HTTP/1.1"" 500 -","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXP2N6SNK1Q918CBAJ9GN","",-1
+"2025-08-26 20:08:15",1756238895205,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"rkd62-1756238895147-033c1d454c35","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"ERROR:api:An unexpected server error occurred: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXP2N6SNK1Q918CBAJ9GN","",-1
+"2025-08-26 20:08:15",1756238895205,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"rkd62-1756238895147-033c1d454c35","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXP2N6SNK1Q918CBAJ9GN","",-1
+"2025-08-26 20:08:15",1756238895205,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"rkd62-1756238895147-033c1d454c35","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"File ""/var/task/werkzeug/routing/map.py"", line 629, in match
+    raise NotFound() from None","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXP2N6SNK1Q918CBAJ9GN","",-1
+"2025-08-26 20:08:15",1756238895205,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"rkd62-1756238895147-033c1d454c35","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"File ""/var/task/flask/ctx.py"", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXP2N6SNK1Q918CBAJ9GN","",-1
+"2025-08-26 20:08:15",1756238895205,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"rkd62-1756238895147-033c1d454c35","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"File ""/var/task/flask/app.py"", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXP2N6SNK1Q918CBAJ9GN","",-1
+"2025-08-26 20:08:15",1756238895205,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"rkd62-1756238895147-033c1d454c35","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"File ""/var/task/flask/app.py"", line 891, in dispatch_request
+    self.raise_routing_exception(req)","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXP2N6SNK1Q918CBAJ9GN","",-1
+"2025-08-26 20:08:15",1756238895205,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"rkd62-1756238895147-033c1d454c35","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"File ""/var/task/flask/app.py"", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXP2N6SNK1Q918CBAJ9GN","",-1
+"2025-08-26 20:08:15",1756238895204,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"rkd62-1756238895147-033c1d454c35","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"Traceback (most recent call last):","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXP2N6SNK1Q918CBAJ9GN","",-1
+"2025-08-26 20:08:15",1756238895189,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",500,"rkd62-1756238895147-033c1d454c35","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",5,"iad1",169,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXP2N6SNK1Q918CBAJ9GN","HJQuqfohIOgM",1
+"2025-08-26 20:08:14",1756238894075,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"b9g2x-1756238893907-551477c68f53","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"127.0.0.1 - - [26/Aug/2025 20:08:14] ""GET /favicon.png HTTP/1.1"" 500 -","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXMZ8T7SN6ZSANYP537KG","",-1
+"2025-08-26 20:08:14",1756238894075,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"b9g2x-1756238893907-551477c68f53","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"ERROR:api:An unexpected server error occurred: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXMZ8T7SN6ZSANYP537KG","",-1
+"2025-08-26 20:08:14",1756238894075,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"b9g2x-1756238893907-551477c68f53","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXMZ8T7SN6ZSANYP537KG","",-1
+"2025-08-26 20:08:14",1756238894075,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"b9g2x-1756238893907-551477c68f53","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"File ""/var/task/werkzeug/routing/map.py"", line 629, in match
+    raise NotFound() from None","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXMZ8T7SN6ZSANYP537KG","",-1
+"2025-08-26 20:08:14",1756238894075,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"b9g2x-1756238893907-551477c68f53","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"File ""/var/task/flask/ctx.py"", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXMZ8T7SN6ZSANYP537KG","",-1
+"2025-08-26 20:08:14",1756238894075,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"b9g2x-1756238893907-551477c68f53","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"File ""/var/task/flask/app.py"", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXMZ8T7SN6ZSANYP537KG","",-1
+"2025-08-26 20:08:14",1756238894075,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"b9g2x-1756238893907-551477c68f53","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"File ""/var/task/flask/app.py"", line 891, in dispatch_request
+    self.raise_routing_exception(req)","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXMZ8T7SN6ZSANYP537KG","",-1
+"2025-08-26 20:08:14",1756238894074,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"b9g2x-1756238893907-551477c68f53","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"File ""/var/task/flask/app.py"", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXMZ8T7SN6ZSANYP537KG","",-1
+"2025-08-26 20:08:14",1756238894074,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"b9g2x-1756238893907-551477c68f53","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"Traceback (most recent call last):","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXMZ8T7SN6ZSANYP537KG","",-1
+"2025-08-26 20:08:14",1756238894056,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",500,"b9g2x-1756238893907-551477c68f53","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",6,"iad1",169,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXMZ8T7SN6ZSANYP537KG","HJQuqfohIOgM",1
+"2025-08-26 20:08:13",1756238893867,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",-1,"dbdch-1756238893809-7c3f18110d75","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"127.0.0.1 - - [26/Aug/2025 20:08:13] ""GET /favicon.ico HTTP/1.1"" 204 -","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXMRYPA2H5NMS7DQVNZH0","",-1
+"2025-08-26 20:08:13",1756238893854,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",204,"dbdch-1756238893809-7c3f18110d75","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",4,"iad1",169,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXMRYPA2H5NMS7DQVNZH0","HJQuqfohIOgM",1
+"2025-08-26 20:08:13",1756238893688,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/","GET","",-1,"mlbrh-1756238893616-3c8bec7cf30a","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"127.0.0.1 - - [26/Aug/2025 20:08:13] ""GET / HTTP/1.1"" 200 -","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXMJZR8HJ8NQ1T4ZW31C8","",-1
+"2025-08-26 20:08:13",1756238893663,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/","GET","",200,"mlbrh-1756238893616-3c8bec7cf30a","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",6,"iad1",169,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZXMJZR8HJ8NQ1T4ZW31C8","HJQuqfohIOgM",1
+"2025-08-26 20:07:54",1756238874374,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/","GET","",-1,"7bpw9-1756238869595-8e11325f4239","vercel-screenshot/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"127.0.0.1 - - [26/Aug/2025 20:07:54] ""GET / HTTP/1.1"" 200 -","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZWXBPS4E0R87G7AGJE0MD","",-1
+"2025-08-26 20:07:54",1756238874187,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/","GET","",-1,"slzj2-1756238869600-5bcdad92216f","vercel-screenshot/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"127.0.0.1 - - [26/Aug/2025 20:07:54] ""GET / HTTP/1.1"" 200 -","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZWXBM85BEEY6NAG34C0EH","",-1
+"2025-08-26 20:07:54",1756238874102,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",-1,"f5pcn-1756238873948-f1850d39ace3","vercel-screenshot/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"127.0.0.1 - - [26/Aug/2025 20:07:54] ""GET /favicon.ico HTTP/1.1"" 204 -","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZX1EZ1J6V5DKQKTRSH5ZJ","",-1
+"2025-08-26 20:07:54",1756238874079,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",204,"f5pcn-1756238873948-f1850d39ace3","vercel-screenshot/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",4,"iad1",172,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZX1EZ1J6V5DKQKTRSH5ZJ","PI6kpGozetyR",1
+"2025-08-26 20:07:53",1756238873968,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",-1,"djhjw-1756238873902-51019fbfd581","vercel-screenshot/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"127.0.0.1 - - [26/Aug/2025 20:07:53] ""GET /favicon.ico HTTP/1.1"" 204 -","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZX1AN45E5S5MJPRZGC0F1","",-1
+"2025-08-26 20:07:53",1756238873941,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",204,"djhjw-1756238873902-51019fbfd581","vercel-screenshot/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",4,"iad1",172,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZX1AN45E5S5MJPRZGC0F1","PI6kpGozetyR",1
+"2025-08-26 20:07:53",1756238873852,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/","GET","",-1,"f5pcn-1756238873672-51507c6fa2c1","vercel-screenshot/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"127.0.0.1 - - [26/Aug/2025 20:07:53] ""GET / HTTP/1.1"" 200 -","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZX16MBSCHMAGG819ERYQP","",-1
+"2025-08-26 20:07:53",1756238873835,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/","GET","",-1,"djhjw-1756238873664-2a6b43501227","vercel-screenshot/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",-1,"iad1",-1,-1,"127.0.0.1 - - [26/Aug/2025 20:07:53] ""GET / HTTP/1.1"" 200 -","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZX16ECZ7DVC8PS90EVE2B","",-1
+"2025-08-26 20:07:53",1756238873812,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/","GET","",200,"f5pcn-1756238873672-51507c6fa2c1","vercel-screenshot/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",4,"iad1",172,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZX16MBSCHMAGG819ERYQP","PI6kpGozetyR",1
+"2025-08-26 20:07:53",1756238873806,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/","GET","",200,"djhjw-1756238873664-2a6b43501227","vercel-screenshot/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",5,"iad1",172,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZX16ECZ7DVC8PS90EVE2B","PI6kpGozetyR",1
+"2025-08-26 20:07:49",1756238869878,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/","GET","",200,"7bpw9-1756238869595-8e11325f4239","vercel-screenshot/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",6,"iad1",169,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZWXBPS4E0R87G7AGJE0MD","HJQuqfohIOgM",1
+"2025-08-26 20:07:49",1756238869876,"proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app/","GET","",200,"slzj2-1756238869600-5bcdad92216f","vercel-screenshot/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","proofofputt-backend-i6mdewi42-nicholas-kirwans-projects.vercel.app","dpl_9vtoECmPHyYsovf3pwEdW1KakTEB",6,"iad1",169,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZWXBM85BEEY6NAG34C0EH","t460TMuKfYEF",1
+"2025-08-26 20:00:19",1756238419212,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"xxcsp-1756238419154-3fcd88b050f0","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",-1,"iad1",-1,-1,"127.0.0.1 - - [26/Aug/2025 20:00:19] ""GET /favicon.png HTTP/1.1"" 500 -","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF57WYPRJECEJ40QP8X64","",-1
+"2025-08-26 20:00:19",1756238419212,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"xxcsp-1756238419154-3fcd88b050f0","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",-1,"iad1",-1,-1,"ERROR:api:An unexpected server error occurred: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF57WYPRJECEJ40QP8X64","",-1
+"2025-08-26 20:00:19",1756238419212,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"xxcsp-1756238419154-3fcd88b050f0","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",-1,"iad1",-1,-1,"werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF57WYPRJECEJ40QP8X64","",-1
+"2025-08-26 20:00:19",1756238419212,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"xxcsp-1756238419154-3fcd88b050f0","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",-1,"iad1",-1,-1,"File ""/var/task/werkzeug/routing/map.py"", line 629, in match
+    raise NotFound() from None","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF57WYPRJECEJ40QP8X64","",-1
+"2025-08-26 20:00:19",1756238419212,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"xxcsp-1756238419154-3fcd88b050f0","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",-1,"iad1",-1,-1,"File ""/var/task/flask/ctx.py"", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF57WYPRJECEJ40QP8X64","",-1
+"2025-08-26 20:00:19",1756238419212,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"xxcsp-1756238419154-3fcd88b050f0","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",-1,"iad1",-1,-1,"File ""/var/task/flask/app.py"", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF57WYPRJECEJ40QP8X64","",-1
+"2025-08-26 20:00:19",1756238419212,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"xxcsp-1756238419154-3fcd88b050f0","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",-1,"iad1",-1,-1,"File ""/var/task/flask/app.py"", line 891, in dispatch_request
+    self.raise_routing_exception(req)","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF57WYPRJECEJ40QP8X64","",-1
+"2025-08-26 20:00:19",1756238419211,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"xxcsp-1756238419154-3fcd88b050f0","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",-1,"iad1",-1,-1,"File ""/var/task/flask/app.py"", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF57WYPRJECEJ40QP8X64","",-1
+"2025-08-26 20:00:19",1756238419211,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"xxcsp-1756238419154-3fcd88b050f0","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",-1,"iad1",-1,-1,"Traceback (most recent call last):","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF57WYPRJECEJ40QP8X64","",-1
+"2025-08-26 20:00:19",1756238419196,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",500,"xxcsp-1756238419154-3fcd88b050f0","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",5,"iad1",170,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF57WYPRJECEJ40QP8X64","vmCWRug84je4",1
+"2025-08-26 20:00:17",1756238417084,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"7499b-1756238417015-0fd7395c4d3c","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",-1,"iad1",-1,-1,"127.0.0.1 - - [26/Aug/2025 20:00:17] ""GET /favicon.png HTTP/1.1"" 500 -","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF3552GZRRY006AK52CR2","",-1
+"2025-08-26 20:00:17",1756238417084,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"7499b-1756238417015-0fd7395c4d3c","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",-1,"iad1",-1,-1,"ERROR:api:An unexpected server error occurred: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF3552GZRRY006AK52CR2","",-1
+"2025-08-26 20:00:17",1756238417084,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"7499b-1756238417015-0fd7395c4d3c","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",-1,"iad1",-1,-1,"werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF3552GZRRY006AK52CR2","",-1
+"2025-08-26 20:00:17",1756238417084,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"7499b-1756238417015-0fd7395c4d3c","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",-1,"iad1",-1,-1,"File ""/var/task/werkzeug/routing/map.py"", line 629, in match
+    raise NotFound() from None","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF3552GZRRY006AK52CR2","",-1
+"2025-08-26 20:00:17",1756238417084,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"7499b-1756238417015-0fd7395c4d3c","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",-1,"iad1",-1,-1,"File ""/var/task/flask/ctx.py"", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF3552GZRRY006AK52CR2","",-1
+"2025-08-26 20:00:17",1756238417084,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"7499b-1756238417015-0fd7395c4d3c","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",-1,"iad1",-1,-1,"File ""/var/task/flask/app.py"", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF3552GZRRY006AK52CR2","",-1
+"2025-08-26 20:00:17",1756238417084,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"7499b-1756238417015-0fd7395c4d3c","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",-1,"iad1",-1,-1,"File ""/var/task/flask/app.py"", line 891, in dispatch_request
+    self.raise_routing_exception(req)","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF3552GZRRY006AK52CR2","",-1
+"2025-08-26 20:00:17",1756238417083,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"7499b-1756238417015-0fd7395c4d3c","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",-1,"iad1",-1,-1,"File ""/var/task/flask/app.py"", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF3552GZRRY006AK52CR2","",-1
+"2025-08-26 20:00:17",1756238417083,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"7499b-1756238417015-0fd7395c4d3c","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",-1,"iad1",-1,-1,"Traceback (most recent call last):","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF3552GZRRY006AK52CR2","",-1
+"2025-08-26 20:00:17",1756238417061,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",500,"7499b-1756238417015-0fd7395c4d3c","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",5,"iad1",170,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF3552GZRRY006AK52CR2","vmCWRug84je4",1
+"2025-08-26 20:00:15",1756238415821,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"k7p69-1756238415759-ae708a3e67d1","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",-1,"iad1",-1,-1,"127.0.0.1 - - [26/Aug/2025 20:00:15] ""GET /favicon.png HTTP/1.1"" 500 -","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF1XZ2P6H4PWHTC4W4TDS","",-1
+"2025-08-26 20:00:15",1756238415821,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"k7p69-1756238415759-ae708a3e67d1","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",-1,"iad1",-1,-1,"ERROR:api:An unexpected server error occurred: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF1XZ2P6H4PWHTC4W4TDS","",-1
+"2025-08-26 20:00:15",1756238415821,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"k7p69-1756238415759-ae708a3e67d1","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",-1,"iad1",-1,-1,"werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF1XZ2P6H4PWHTC4W4TDS","",-1
+"2025-08-26 20:00:15",1756238415821,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"k7p69-1756238415759-ae708a3e67d1","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",-1,"iad1",-1,-1,"File ""/var/task/werkzeug/routing/map.py"", line 629, in match
+    raise NotFound() from None","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF1XZ2P6H4PWHTC4W4TDS","",-1
+"2025-08-26 20:00:15",1756238415821,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"k7p69-1756238415759-ae708a3e67d1","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",-1,"iad1",-1,-1,"File ""/var/task/flask/ctx.py"", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF1XZ2P6H4PWHTC4W4TDS","",-1
+"2025-08-26 20:00:15",1756238415821,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"k7p69-1756238415759-ae708a3e67d1","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",-1,"iad1",-1,-1,"File ""/var/task/flask/app.py"", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF1XZ2P6H4PWHTC4W4TDS","",-1
+"2025-08-26 20:00:15",1756238415821,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"k7p69-1756238415759-ae708a3e67d1","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",-1,"iad1",-1,-1,"File ""/var/task/flask/app.py"", line 891, in dispatch_request
+    self.raise_routing_exception(req)","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF1XZ2P6H4PWHTC4W4TDS","",-1
+"2025-08-26 20:00:15",1756238415821,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"k7p69-1756238415759-ae708a3e67d1","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",-1,"iad1",-1,-1,"File ""/var/task/flask/app.py"", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF1XZ2P6H4PWHTC4W4TDS","",-1
+"2025-08-26 20:00:15",1756238415821,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"k7p69-1756238415759-ae708a3e67d1","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",-1,"iad1",-1,-1,"Traceback (most recent call last):","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF1XZ2P6H4PWHTC4W4TDS","",-1
+"2025-08-26 20:00:15",1756238415807,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",500,"k7p69-1756238415759-ae708a3e67d1","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",5,"iad1",170,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF1XZ2P6H4PWHTC4W4TDS","vmCWRug84je4",1
+"2025-08-26 20:00:15",1756238415675,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",-1,"4pgqc-1756238415511-700a75bc8866","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",-1,"iad1",-1,-1,"127.0.0.1 - - [26/Aug/2025 20:00:15] ""GET /favicon.ico HTTP/1.1"" 204 -","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF1S39M60JSK5ZG6AXCEV","",-1
+"2025-08-26 20:00:15",1756238415651,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",204,"4pgqc-1756238415511-700a75bc8866","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",8,"iad1",170,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF1S39M60JSK5ZG6AXCEV","vmCWRug84je4",1
+"2025-08-26 20:00:15",1756238415366,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/","GET","",-1,"bx8gb-1756238415191-8596cc3547f4","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",-1,"iad1",-1,-1,"127.0.0.1 - - [26/Aug/2025 20:00:15] ""GET / HTTP/1.1"" 200 -","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF1F6AEDHT1MDARQC6PER","",-1
+"2025-08-26 20:00:15",1756238415334,"proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app/","GET","",200,"bx8gb-1756238415191-8596cc3547f4","vercel-favicon/1.0","info","production","main","","lambda","/api.py","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","proofofputt-backend-ggj24vu9h-nicholas-kirwans-projects.vercel.app","dpl_5Eq5NdsXPEw3n3n5aRSbfYa3xQcw",6,"iad1",170,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3KZF1F6AEDHT1MDARQC6PER","vmCWRug84je4",1
