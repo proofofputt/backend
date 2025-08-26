@@ -1,0 +1,29 @@
+Category,All-Time High Score,All-Time Cumulative Score
+Makes,HIGH,SUM
+Best Streak,HIGH,NA
+Fastest 21,HIGH,NA
+Putts Per Minute,HIGH,SUM
+Makes Per Minute,HIGH,SUM
+Most In 60 Seconds,HIGH,NA
+Duration,HIGH,SUM
+Accuracy,HIGH,AVG
+Consecutive By Category,,
+Three,HIGH,SUM
+Seven,HIGH,SUM
+Ten,HIGH,SUM
+Fifteen,HIGH,SUM
+Twenty-One,HIGH,SUM
+Fifty,HIGH,SUM
+One Hundred,HIGH,SUM
+Makes By Category - Overview,,
+Low,HIGH,SUM
+Left,HIGH,SUM
+Right,HIGH,SUM
+Top,HIGH,SUM
+Makes By Category - Detailed Classification,,
+Misses By Category - Overview,,
+Return,LOW,SUM
+Catch,LOW,SUM
+Timeout,LOW ,SUM
+Quick Putt,LOW,SUM
+Misses By Category - Detailed Classification,,

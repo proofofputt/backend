@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+proofofputt.egg-info/PKG-INFO
+proofofputt.egg-info/SOURCES.txt
+proofofputt.egg-info/dependency_links.txt
+proofofputt.egg-info/entry_points.txt
+proofofputt.egg-info/requires.txt
+proofofputt.egg-info/top_level.txt

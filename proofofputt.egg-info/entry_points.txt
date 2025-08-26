@@ -1,0 +1,4 @@
+[console_scripts]
+proofofputt-api = api:main
+proofofputt-manage = manage_players:main
+proofofputt-tracker = run_tracker:main

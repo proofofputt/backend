@@ -1,0 +1,74 @@
+Instruction Set for LLM Evaluating Putting Performance: A Golf Scientist's Guide
+This instruction set guides a Large Language Model (LLM) in analyzing a golfer's putting statistics, providing actionable insights, and generating personalized recommendations. It leverages advanced analytical techniques informed by a deep understanding of the nuances of putting performance.
+
+I. Data Input:
+
+The LLM will receive the following input data formats:
+
+Career Statistics: A structured dataset including:
+
+session_id: Unique identifier for each putting session.
+date: Date of the session.
+putts_attempted: Total number of putts attempted.
+putts_made: Total number of putts made.
+avg_ppm: Average putts per minute.
+avg_accuracy: Average accuracy percentage.
+best_streak: Longest consecutive streak of made putts.
+miss_type_distribution: A breakdown of miss types (e.g., "catch," "return," "left," "right," "short," "long") with counts for each category.
+distance_distribution: A frequency distribution of putt distances attempted (binned for clarity).
+location_distribution: A spatial distribution of putts made/missed (e.g., using quadrant or zone-based representation of the hole).
+environmental_factors (optional): Notes on environmental conditions (wind, green speed, etc.) for each session.
+Recent Session Reports: Detailed reports for the most recent sessions (e.g., last 5), providing higher granularity data on each putt (similar to career stats, but per individual putt):
+
+putt_id: Unique identifier for each individual putt.
+session_id: Link to the session.
+distance: Distance of the putt.
+result: "Made" or "Missed"
+miss_type: Specific miss type.
+location: Precise location of the ball (e.g., coordinates relative to hole center).
+time_taken: Time taken for the putt (in seconds).
+II. Analysis and Interpretation Phases:
+
+The LLM will perform the following steps:
+
+A. Data Preprocessing and Cleaning:
+
+Data Validation: Check for missing values, inconsistencies, and outliers in the datasets. Implement appropriate handling strategies (e.g., imputation, removal).
+Data Transformation: Standardize units and formats as needed. Transform categorical variables (miss types) into numerical representations (one-hot encoding) for analytical purposes.
+Data Aggregation: Aggregate session-level data to calculate summary statistics (means, medians, standard deviations, etc.) for different variables.
+B. Descriptive Statistics and Visualization:
+
+Summary Statistics: Generate descriptive statistics summarizing the player's overall putting performance (averages, percentiles, etc.) and identify trends and patterns.
+Data Visualization: Create appropriate visualizations (e.g., histograms, scatter plots, box plots) to illustrate key findings and patterns in the data. Focus on illustrating:
+Distribution of putt distances and corresponding success rates.
+Temporal trends in putting performance over time.
+Spatial distribution of makes and misses.
+Relationships between miss types and other variables (distance, time taken).
+C. Advanced Statistical Analysis (optional, depending on data and LLM capabilities):
+
+Regression Analysis: Explore relationships between putting performance and potential predictors (distance, location, miss type, environmental factors). Identify significant factors affecting putting success.
+Time Series Analysis: Analyze temporal trends in putting performance to detect patterns and predict future performance.
+Clustering Analysis: If sufficient data is available, group putting sessions based on similarity in performance metrics, helping to identify periods of high and low performance.
+III. Report Generation and Recommendations:
+
+The LLM will generate a comprehensive report including:
+
+Executive Summary: A concise overview of the player's putting performance, highlighting key strengths and weaknesses.
+Detailed Analysis: A detailed breakdown of the statistical analysis, including visualizations and interpretations.
+Personalized Recommendations: Based on the analysis, generate tailored recommendations for improvement, including:
+Technical Adjustments: Specific recommendations on stroke mechanics, grip, posture, and alignment based on observed patterns in the data (e.g., "A tendency to leave putts short suggests working on increasing backswing length").
+Mental Strategies: Advice on mental approach, visualization techniques, and managing pressure during putting.
+Practice Drills: Specific drills to target identified weaknesses (e.g., "To address the high rate of 'catch' misses, focus on the 'slow-motion pendulum' drill").
+Targeted Practice: Recommendations to prioritize practice from specific distances or hole locations.
+Future Monitoring: Suggest metrics to track to monitor progress and refine the recommendations over time.
+IV. LLM Capabilities and Limitations:
+
+The LLM should be capable of:
+
+Statistical analysis: Performing descriptive, inferential, and potentially advanced statistical analyses.
+Data visualization: Generating charts and graphs to represent the data effectively.
+Natural language processing: Generating coherent and insightful reports in clear, concise language.
+Knowledge reasoning: Integrating domain expertise (golf putting knowledge) with data analysis to draw meaningful conclusions.
+The LLM's limitations should be acknowledged, including: correlation vs. causation, the reliance on the quality of input data, and the inability to provide physical coaching or direct feedback.
+
+This instruction set provides a framework for a sophisticated LLM-based putting analysis system. The complexity and specific analyses performed will depend on the LLM's capabilities and the availability of data.

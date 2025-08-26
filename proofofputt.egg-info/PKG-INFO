@@ -1,0 +1,111 @@
+Metadata-Version: 2.4
+Name: proofofputt
+Version: 0.1.0
+Summary: A comprehensive putt tracking system.
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: Flask
+Requires-Dist: Flask-Cors
+Requires-Dist: SQLAlchemy
+Requires-Dist: Werkzeug
+Requires-Dist: rich
+Requires-Dist: opencv-python
+Requires-Dist: numpy
+Requires-Dist: ultralytics
+Requires-Dist: psycopg2-binary
+Requires-Dist: requests
+
+# Proof of Putt
+
+This project is a comprehensive putt tracking system that uses computer vision to analyze golf putts, a Python backend with a Flask API to manage data, and a React front-end for user interaction.
+
+## Getting Started
+
+This guide will walk you through setting up both the Python backend and the React frontend.
+
+### Prerequisites
+
+-   [Python 3.8+](https://www.python.org/)
+-   [Node.js](https://nodejs.org/) (which includes npm)
+-   A PostgreSQL database (e.g., via [Neon](https://neon.tech/) or a local installation).
+
+---
+
+## Backend Setup (Python / Flask)
+
+1.  **Create and activate a virtual environment:**
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
+
+2.  **Install Python dependencies in Editable Mode:**
+    This project uses a `pyproject.toml` file to manage dependencies and define command-line scripts. Installing in "editable" mode (`-e`) links the package to your source files, so any changes you make are immediately reflected.
+    ```bash
+    pip install -e .
+    ```
+    *Note: This replaces the need for `pip install -r requirements.txt`.*
+
+3.  **Configure the Database:**
+    Set the `DATABASE_URL` environment variable to point to your PostgreSQL database. You can do this by creating a `.env` file in the root directory or exporting it in your shell.
+    ```
+    # Example for .env file
+    DATABASE_URL="postgresql://user:password@host/dbname"
+    ```
+
+4.  **Run Backend Scripts:**
+    After installation, you can use the following commands from your terminal:
+    - **Run the API Server:** `proofofputt-api`
+    - **Manage Players:** `proofofputt-manage list`
+    - **Run the Putt Tracker:** `proofofputt-tracker --camera_index 0`
+
+    The API server will start on `http://localhost:8080`.
+
+---
+
+## Frontend Setup (React / Vite)
+
+1.  **Create the React project:**
+    From the root `proofofputt` directory, run the following command to create a `webapp` subdirectory for the frontend code.
+    ```bash
+    npm create vite@latest webapp -- --template react
+    ```
+    **Important:** The command will ask for confirmation to install `create-vite`. Type `y` and press Enter to proceed.
+
+2.  **Navigate into the webapp directory:**
+    ```bash
+    cd webapp
+    ```
+
+3.  **Install frontend dependencies:**
+    ```bash
+    npm install
+    ```
+
+4.  **Run the Frontend Development Server:**
+    ```bash
+    npm run dev
+    ```
+    The React development server will start, typically on `http://localhost:5173`.
+
+---
+
+## Troubleshooting
+
+### `command not found: proofofputt-manage` (or other scripts)
+
+If you see an error like `zsh: command not found: proofofputt-manage` after activating your virtual environment, it means the command-line scripts were not installed correctly.
+
+**Solution:**
+
+1.  Make sure your virtual environment is active (`source venv/bin/activate`).
+2.  Re-run the editable installation command from the project's root directory:
+    ```bash
+    pip install -e .
+    ```
+    This command creates the necessary script files (like `proofofputt-manage`) inside your virtual environment's `bin` directory.
+
+3.  If the command still fails, you can run the script directly as a Python module:
+    ```bash
+    python manage_players.py list
+    ```
