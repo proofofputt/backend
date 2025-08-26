@@ -1,0 +1,225 @@
+"TimeUTC","timestampInMs","requestPath","requestMethod","requestQueryString","responseStatusCode","requestId","requestUserAgent","level","environment","branch","vercelCache","type","function","host","deploymentDomain","deploymentId","durationMs","region","maxMemoryUsed","memorySize","message","projectId","traceId","sessionId","invocationId","instanceId","concurrency"
+"2025-08-26 02:04:28",1756173868332,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"d5kjc-1756173865094-866921f170b1","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 19, in <module>
+import data_manager
+File ""/var/task/data_manager.py"", line 5, in <module>
+from google.cloud.sql.connector import Connector, IPTypes
+ModuleNotFoundError: No module named 'google.cloud.sql'
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1X45VKRW8FZSJVWEGYVS6","",-1
+"2025-08-26 02:04:25",1756173865147,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",500,"d5kjc-1756173865094-866921f170b1","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",3166,"iad1",157,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1X45VKRW8FZSJVWEGYVS6","",1
+"2025-08-26 02:04:24",1756173864012,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",-1,"fnwp7-1756173860726-e38535d93f8e","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 19, in <module>
+import data_manager
+File ""/var/task/data_manager.py"", line 5, in <module>
+from google.cloud.sql.connector import Connector, IPTypes
+ModuleNotFoundError: No module named 'google.cloud.sql'
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1WZX5K0MQEDWWB9G0VBQ2","",-1
+"2025-08-26 02:04:20",1756173860773,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/favicon.png","GET","",500,"fnwp7-1756173860726-e38535d93f8e","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",3215,"iad1",158,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1WZX5K0MQEDWWB9G0VBQ2","",1
+"2025-08-26 02:04:20",1756173860685,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",-1,"mdzx7-1756173857358-ab0823739bc1","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 19, in <module>
+import data_manager
+File ""/var/task/data_manager.py"", line 5, in <module>
+from google.cloud.sql.connector import Connector, IPTypes
+ModuleNotFoundError: No module named 'google.cloud.sql'
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1WWKPWFJGTW0PNT815HHC","",-1
+"2025-08-26 02:04:17",1756173857398,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",500,"mdzx7-1756173857358-ab0823739bc1","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",3270,"iad1",157,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1WWKPWFJGTW0PNT815HHC","",1
+"2025-08-26 02:04:15",1756173855774,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",-1,"vdv9f-1756173852257-709dfbd51e6b","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 19, in <module>
+import data_manager
+File ""/var/task/data_manager.py"", line 5, in <module>
+from google.cloud.sql.connector import Connector, IPTypes
+ModuleNotFoundError: No module named 'google.cloud.sql'
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1WQM2XT51GAPRBX8A4EQQ","",-1
+"2025-08-26 02:04:15",1756173855276,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",-1,"w8jc6-1756173851863-58dd16b918c4","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 19, in <module>
+import data_manager
+File ""/var/task/data_manager.py"", line 5, in <module>
+from google.cloud.sql.connector import Connector, IPTypes
+ModuleNotFoundError: No module named 'google.cloud.sql'
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1WQ853RTE31BKJHTS89BE","",-1
+"2025-08-26 02:04:12",1756173852290,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",500,"vdv9f-1756173852257-709dfbd51e6b","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",3466,"iad1",157,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1WQM2XT51GAPRBX8A4EQQ","",1
+"2025-08-26 02:04:12",1756173852104,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/","GET","",-1,"lx7d9-1756173848462-cf63686ccef2","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 19, in <module>
+import data_manager
+File ""/var/task/data_manager.py"", line 5, in <module>
+from google.cloud.sql.connector import Connector, IPTypes
+ModuleNotFoundError: No module named 'google.cloud.sql'
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1WKX7YMAEBTTZYXCPT9D9","",-1
+"2025-08-26 02:04:11",1756173851909,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",500,"w8jc6-1756173851863-58dd16b918c4","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",3350,"iad1",158,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1WQ853RTE31BKJHTS89BE","",1
+"2025-08-26 02:04:10",1756173850715,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",-1,"s85qp-1756173847314-d20c67798e7f","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 19, in <module>
+import data_manager
+File ""/var/task/data_manager.py"", line 5, in <module>
+from google.cloud.sql.connector import Connector, IPTypes
+ModuleNotFoundError: No module named 'google.cloud.sql'
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1WJSV27Y4R4EMX8SVJGYN","",-1
+"2025-08-26 02:04:08",1756173848487,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/","GET","",500,"lx7d9-1756173848462-cf63686ccef2","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",3601,"iad1",158,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1WKX7YMAEBTTZYXCPT9D9","",1
+"2025-08-26 02:04:07",1756173847775,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/","GET","",-1,"ndxvp-1756173844235-babeb1a6c3e8","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 19, in <module>
+import data_manager
+File ""/var/task/data_manager.py"", line 5, in <module>
+from google.cloud.sql.connector import Connector, IPTypes
+ModuleNotFoundError: No module named 'google.cloud.sql'
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1WFWHF72F70NXHA0S8XP6","",-1
+"2025-08-26 02:04:07",1756173847355,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",500,"s85qp-1756173847314-d20c67798e7f","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",3342,"iad1",157,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1WJSV27Y4R4EMX8SVJGYN","",1
+"2025-08-26 02:04:04",1756173844369,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/","GET","",500,"ndxvp-1756173844235-babeb1a6c3e8","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",3377,"iad1",157,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1WFWHF72F70NXHA0S8XP6","",1
+"2025-08-26 02:04:03",1756173843642,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/","GET","",-1,"dxkmm-1756173840285-5b7160435804","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 19, in <module>
+import data_manager
+File ""/var/task/data_manager.py"", line 5, in <module>
+from google.cloud.sql.connector import Connector, IPTypes
+ModuleNotFoundError: No module named 'google.cloud.sql'
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1WBY7NE0357H3S5X89N45","",-1
+"2025-08-26 02:04:03",1756173843494,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",-1,"8brdn-1756173840188-958fd3cb4348","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 19, in <module>
+import data_manager
+File ""/var/task/data_manager.py"", line 5, in <module>
+from google.cloud.sql.connector import Connector, IPTypes
+ModuleNotFoundError: No module named 'google.cloud.sql'
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1WBY11GR9H6HGJNXNPNMS","",-1
+"2025-08-26 02:04:02",1756173842365,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",-1,"42h57-1756173839502-8a02de06a745","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 19, in <module>
+import data_manager
+File ""/var/task/data_manager.py"", line 5, in <module>
+from google.cloud.sql.connector import Connector, IPTypes
+ModuleNotFoundError: No module named 'google.cloud.sql'
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1WB5TZGNYWHSE53XZ4MTE","",-1
+"2025-08-26 02:04:00",1756173840327,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/","GET","",500,"dxkmm-1756173840285-5b7160435804","vercel-favicon/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",3298,"iad1",158,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1WBY7NE0357H3S5X89N45","",1
+"2025-08-26 02:04:00",1756173840321,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",500,"8brdn-1756173840188-958fd3cb4348","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",3157,"iad1",158,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1WBY11GR9H6HGJNXNPNMS","",1
+"2025-08-26 02:04:00",1756173840106,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/","GET","",-1,"bt48n-1756173833107-2072babac44f","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 19, in <module>
+import data_manager
+File ""/var/task/data_manager.py"", line 5, in <module>
+from google.cloud.sql.connector import Connector, IPTypes
+ModuleNotFoundError: No module named 'google.cloud.sql'
+Python process exited with exit status: 1. The logs above can help with debugging the issue.
+Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 19, in <module>
+import data_manager
+File ""/var/task/data_manager.py"", line 5, in <module>
+from google.cloud.sql.connector import Connector, IPTypes
+ModuleNotFoundError: No module named 'google.cloud.sql'
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1W52DGYCM1AKYJNTHA1ES","",-1
+"2025-08-26 02:03:59",1756173839546,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/favicon.ico","GET","",500,"42h57-1756173839502-8a02de06a745","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",2802,"iad1",157,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1WB5TZGNYWHSE53XZ4MTE","",1
+"2025-08-26 02:03:59",1756173839410,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/","GET","",-1,"b6qv9-1756173833217-19ecd2669753","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 19, in <module>
+import data_manager
+File ""/var/task/data_manager.py"", line 5, in <module>
+from google.cloud.sql.connector import Connector, IPTypes
+ModuleNotFoundError: No module named 'google.cloud.sql'
+Python process exited with exit status: 1. The logs above can help with debugging the issue.
+Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 19, in <module>
+import data_manager
+File ""/var/task/data_manager.py"", line 5, in <module>
+from google.cloud.sql.connector import Connector, IPTypes
+ModuleNotFoundError: No module named 'google.cloud.sql'
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1W54Q2YBK5F2V88NGJ7K7","",-1
+"2025-08-26 02:03:56",1756173836524,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/","GET","",-1,"56hdl-1756173829146-57c4f24c060f","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 19, in <module>
+import data_manager
+File ""/var/task/data_manager.py"", line 5, in <module>
+from google.cloud.sql.connector import Connector, IPTypes
+ModuleNotFoundError: No module named 'google.cloud.sql'
+Python process exited with exit status: 1. The logs above can help with debugging the issue.
+Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 19, in <module>
+import data_manager
+File ""/var/task/data_manager.py"", line 5, in <module>
+from google.cloud.sql.connector import Connector, IPTypes
+ModuleNotFoundError: No module named 'google.cloud.sql'
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1W1D6SMVWJPR9XTAHFHCE","",-1
+"2025-08-26 02:03:56",1756173836324,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/","GET","",-1,"lq6sv-1756173829037-ebc44f615cf5","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",-1,"iad1",-1,-1,"Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 19, in <module>
+import data_manager
+File ""/var/task/data_manager.py"", line 5, in <module>
+from google.cloud.sql.connector import Connector, IPTypes
+ModuleNotFoundError: No module named 'google.cloud.sql'
+Python process exited with exit status: 1. The logs above can help with debugging the issue.
+Traceback (most recent call last):
+File ""/var/task/vc__handler__python.py"", line 14, in <module>
+__vc_spec.loader.exec_module(__vc_module)
+File ""<frozen importlib._bootstrap_external>"", line 999, in exec_module
+File ""<frozen importlib._bootstrap>"", line 488, in _call_with_frames_removed
+File ""/var/task/api.py"", line 19, in <module>
+import data_manager
+File ""/var/task/data_manager.py"", line 5, in <module>
+from google.cloud.sql.connector import Connector, IPTypes
+ModuleNotFoundError: No module named 'google.cloud.sql'
+Python process exited with exit status: 1. The logs above can help with debugging the issue.","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1W1D79TTRHZRY4THEKEZ9","",-1
+"2025-08-26 02:03:53",1756173833367,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/","GET","",500,"b6qv9-1756173833217-19ecd2669753","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",2765,"iad1",158,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1W54Q2YBK5F2V88NGJ7K7","",1
+"2025-08-26 02:03:53",1756173833293,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/","GET","",500,"bt48n-1756173833107-2072babac44f","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",3117,"iad1",158,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1W52DGYCM1AKYJNTHA1ES","",1
+"2025-08-26 02:03:49",1756173829543,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/","GET","",500,"lq6sv-1756173829037-ebc44f615cf5","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",3149,"iad1",157,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1W1D79TTRHZRY4THEKEZ9","",1
+"2025-08-26 02:03:49",1756173829542,"proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app/","GET","",500,"56hdl-1756173829146-57c4f24c060f","vercel-screenshot/1.0","error","production","main","","lambda","/api.py","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","proofofputt-backend-a6g2idkq6-nicholas-kirwans-projects.vercel.app","dpl_F64Zot3mqon5KMcijMTperQX2Fax",3249,"iad1",158,2048,"","prj_vzDqzUy8vbtGgTYmqMKjOWC9LLFD","","","01K3J1W1D6SMVWJPR9XTAHFHCE","",1
