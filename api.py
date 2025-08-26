@@ -29,6 +29,11 @@ except Exception as e:
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": os.environ.get("FRONTEND_URL", "http://localhost:5173"), "allow_headers": "Content-Type"}})
 
+# Initialize database and create default user once when the app starts
+with app.app_context():
+    data_manager.initialize_database()
+    data_manager.create_default_user_if_not_exists()
+
 @app.errorhandler(ValueError)
 def handle_value_error(e):
     return jsonify({"error": str(e)}), 400
@@ -37,11 +42,6 @@ def handle_value_error(e):
 def handle_generic_exception(e):
     app.logger.error(f"An unexpected server error occurred: {e}", exc_info=True)
     return jsonify({"error": "An unexpected server error occurred."}), 500
-
-@app.before_request
-def ensure_db_initialized():
-    data_manager.initialize_database()
-    data_manager.create_default_user_if_not_exists()
 
 def subscription_required(f):
     """A decorator to protect routes that require a subscription."""
